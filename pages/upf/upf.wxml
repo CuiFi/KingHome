@@ -1,0 +1,9 @@
+<view class="page">
+    <view class="page__bd page__bd_spacing">
+        <view class="sub-title">签约成功</view>
+        <wux-upload list-type="picture-card" file-list="{{ fileList }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="onChange" bind:success="onSuccess" bind:fail="onFail" bind:complete="onComplete" bind:preview="onPreview" bind:remove="onRemove">
+            <text>Upload</text>
+        </wux-upload>
+    </view>
+    <button bindtap='getloc'>获取位置</button>
+</view>

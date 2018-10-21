@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wux-badge": "../../wuxdist/badge/index",
+    "wux-upload": "../../wuxdist/upload/index"
+  }
+}

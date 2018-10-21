@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "Upload",
+  "usingComponents": {
+    "wux-upload": "../../wuxdist/upload/index"
+  }
+}
