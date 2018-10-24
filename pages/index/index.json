@@ -1,6 +1,9 @@
 {
   "usingComponents": {
     "wux-badge": "../../wuxdist/badge/index",
-    "wux-upload": "../../wuxdist/upload/index"
+    "wux-upload": "../../wuxdist/upload/index",
+    "van-row": "../../vantdist/row/index",
+    "van-col": "../../vantdist/col/index",
+    "van-button": "../../vantdist/button/index"
   }
 }

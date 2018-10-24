@@ -1,0 +1,32 @@
+page{
+  /* background-color: red; */
+}
+
+.index_title{
+  padding-top: 30rpx;
+  padding-bottom: 200rpx;
+  text-align: center;
+}
+.index_img{
+  padding-top: 200rpx;
+  text-align: center;
+}
+.index_img image{
+  box-sizing: border-box;
+  display: inline-block;
+  background: #ccc;
+  color: #fff;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+  width: 180rpx;
+  height: 180rpx;
+  line-height: 180rpx;
+  border-radius: 100rpx;
+  font-size: 36rpx;
+  /* border: 1px solid #ccc; */
+}
+.userinfo{
+  text-align: center;
+}

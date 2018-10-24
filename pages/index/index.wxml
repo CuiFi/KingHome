@@ -1,14 +1,24 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登陆 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-    <button bindtap='goUpf'>go</button>
-  </view>
+
+<van-row custom-class="index_img">
+  <van-col offset="6" span="12">
+    <image src='/img/av.jpg'></image>
+  </van-col>
+</van-row>
+
+<van-row custom-class="index_title">
+  <van-col offset="6" span="12">{{motto}}</van-col>
+</van-row>
+
+<view class='userinfo'>
+  <van-button type="danger" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">登陆授权</van-button>
 </view>
+<!-- <view class="userinfo"> -->
+  <!-- <van-button type="default"  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">登陆授权</van-button> -->
+  <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登陆 </button> -->
+  <!-- <block wx:else>
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </block> -->
+<!-- </view> -->
+

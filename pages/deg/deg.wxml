@@ -1,0 +1,76 @@
+<!--pages/deg/deg.wxml-->
+<van-row custom-class="deg_title">
+  <van-col span="24">服务团队</van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-tabs active="{{ server_active_index }}" bind:change="changeClick">
+      <van-tab disabled="{{server_active_0}}" title="客户经理" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ server_fileList_0 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="server_onChange_0" bind:success="server_onSuccess_0" bind:fail="server_onFail_0" bind:complete="server_onComplete_0" bind:preview="server_onPreview_0" bind:remove="server_onRemove_0">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+      <van-tab disabled="{{server_active_1}}" title="设计师" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ server_fileList_1 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="server_onChange_1" bind:success="server_onSuccess_1" bind:fail="server_onFail_1" bind:complete="server_onComplete_1" bind:preview="server_onPreview_1" bind:remove="server_onRemove_1">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+      <van-tab disabled="{{server_active_2}}" title="工长" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ server_fileList_2 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="server_onChange_2" bind:success="server_onSuccess_2" bind:fail="server_onFail_2" bind:complete="server_onComplete_2" bind:preview="server_onPreview_2" bind:remove="server_onRemove_2">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+      <van-tab disabled="{{server_active_3}}" title="监理" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ server_fileList_3 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="server_onChange_3" bind:success="server_onSuccess_3" bind:fail="server_onFail_3" bind:complete="server_onComplete_3" bind:preview="server_onPreview_3" bind:remove="server_onRemove_3">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+      <van-tab disabled="{{server_active_4}}" title="客服" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ server_fileList_4 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="server_onChange_4" bind:success="server_onSuccess_4" bind:fail="server_onFail_4" bind:complete="server_onComplete_4" bind:preview="server_onPreview_4" bind:remove="server_onRemove_4">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+    </van-tabs>
+  </van-col>
+</van-row>
+
+
+<van-row custom-class="deg_title">
+  <van-col span="24">签约</van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-tabs active="{{ sign_active_index }}" bind:change="changeClick">
+      <van-tab disabled="{{sign_active_0}}" title="签约仪式" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ sign_fileList_0 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="sign_onChange_0" bind:success="sign_onSuccess_0" bind:fail="sign_onFail_0" bind:complete="sign_onComplete_0" bind:preview="sign_onPreview_0" bind:remove="sign_onRemove_0">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+      <van-tab disabled="{{sign_active_1}}" title="报价单" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ sign_fileList_1 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="onChange1" bind:success="onSuccess1" bind:fail="onFail1" bind:complete="onComplete1" bind:preview="onPreview1" bind:remove="onRemove1">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+      <van-tab disabled="{{sign_active_2}}" title="设计协议" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ sign_fileList_2 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="onChange2" bind:success="onSuccess2" bind:fail="onFail2" bind:complete="onComplete2" bind:preview="onPreview2" bind:remove="onRemove2">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+      <van-tab disabled="{{sign_active_3}}" title="施工协议" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ sign_fileList_3 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="onChange3" bind:success="onSuccess3" bind:fail="onFail3" bind:complete="onComplete3" bind:preview="onPreview3" bind:remove="onRemove3">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+      <van-tab disabled="{{sign_active_4}}" title="优惠协议" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ sign_fileList_4 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="onChange4" bind:success="onSuccess4" bind:fail="onFail4" bind:complete="onComplete4" bind:preview="onPreview4" bind:remove="onRemove4">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+      <van-tab disabled="{{sign_active_5}}" title="收据" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ sign_fileList_5 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="onChange4" bind:success="onSuccess4" bind:fail="onFail4" bind:complete="onComplete4" bind:preview="onPreview4" bind:remove="onRemove4">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+    </van-tabs>
+  </van-col>
+</van-row>

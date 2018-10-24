@@ -34,7 +34,7 @@ Page({
         })
       }
     });
-    var _this = this;
+    
     wx.request({
       url: 'https://request.hejianzhiyang.com/Shouji/cc', //获取已上传图片列表
       method: "GET",

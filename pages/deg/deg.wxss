@@ -1,0 +1,12 @@
+/* pages/deg/deg.wxss */
+.deg_title{
+  padding: 20rpx 10rpx;
+}
+.deg_title .van-col{
+  text-indent: 10rpx;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+.deg_cont{
+  padding: 20rpx;
+}

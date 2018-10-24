@@ -1,6 +1,9 @@
 {
   "pages":[
+    "pages/deg/deg",
     "pages/index/index",
+    "pages/base/base",
+    
     "pages/upf/upf"
   ],
   "window":{
