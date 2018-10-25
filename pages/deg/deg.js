@@ -24,6 +24,9 @@ Page({
     sign_active_3: true,
     sign_active_4: true,
     sign_active_5: true,
+    // 图纸
+    drawing_active_0: false,
+    drawing_active_1: true,
 
 
     // 用于显示列表图片
@@ -42,7 +45,6 @@ Page({
     sign_fileList_5: [],
     
   },
-
 
 
   changeClick:function(e){
@@ -466,6 +468,7 @@ Page({
       url: 'https://request.hejianzhiyang.com/Shouji/cc', //获取已上传图片列表
       method: "POST",
       data: {
+        tabID:12,
         uid: e.detail.file.uid,
         status: e.detail.file.status,
         sha1: e.detail.file.res.data
@@ -496,6 +499,631 @@ Page({
         if (res.confirm) {
           this.setData({
             sign_fileList_0: fileList.filter((n) => n.uid !== file.uid),
+          });
+          // 判断当前图片列表是否等于0,要在确定按钮设置下一个tab的禁用状态
+          // if (e.detail.fileList.length == 0) {
+          //   this.setData({
+          //     server_active_4: true
+          //   });
+          // }
+        }
+      },
+    })
+  },
+
+  //01
+  sign_onChange_1(e) {
+    const { file } = e.detail
+    if (file.status === 'uploading') {
+      this.setData({
+        progress: 0
+      })
+      wx.showLoading()
+    } else if (file.status === 'done') {
+      // do something
+    } else if (file.status === 'remove') {
+      console.log("我要告诉后台删除图片");
+    }
+  },
+  sign_onSuccess_1(e) {
+    // 判断当前上传图片列表中是否有图片
+    if (e.detail.fileList.length > 0) {
+      this.setData({
+        sign_active_2: false
+      });
+    }
+
+    var _this = this;
+    wx.request({
+      url: 'https://request.hejianzhiyang.com/Shouji/cc', //获取已上传图片列表
+      method: "POST",
+      data: {
+        uid: e.detail.file.uid,
+        status: e.detail.file.status,
+        sha1: e.detail.file.res.data
+      },
+      success(res) {
+        // do something
+      }
+    })
+  },
+  sign_onComplete_1(e) {
+    wx.hideLoading()
+  },
+  sign_onFail_1(e) {
+    // do something
+  },
+  sign_onPreview_1(e) {
+    const { file, fileList } = e.detail
+    wx.previewImage({
+      current: file.url,
+      urls: fileList.map((n) => n.url),
+    })
+  },
+  sign_onRemove_1(e) {
+    const { file, fileList } = e.detail
+    wx.showModal({
+      content: '确定删除？',
+      success: (res) => {
+        if (res.confirm) {
+          this.setData({
+            sign_fileList_1: fileList.filter((n) => n.uid !== file.uid),
+          });
+          // 判断当前图片列表是否等于0,要在确定按钮设置下一个tab的禁用状态
+          // if (e.detail.fileList.length == 0) {
+          //   this.setData({
+          //     server_active_4: true
+          //   });
+          // }
+        }
+      },
+    })
+  },
+
+  //02
+  sign_onChange_2(e) {
+    const { file } = e.detail
+    if (file.status === 'uploading') {
+      this.setData({
+        progress: 0
+      })
+      wx.showLoading()
+    } else if (file.status === 'done') {
+      // do something
+    } else if (file.status === 'remove') {
+      console.log("我要告诉后台删除图片");
+    }
+  },
+  sign_onSuccess_2(e) {
+    // 判断当前上传图片列表中是否有图片
+    if (e.detail.fileList.length > 0) {
+      this.setData({
+        sign_active_3: false
+      });
+    }
+
+    var _this = this;
+    wx.request({
+      url: 'https://request.hejianzhiyang.com/Shouji/cc', //获取已上传图片列表
+      method: "POST",
+      data: {
+        uid: e.detail.file.uid,
+        status: e.detail.file.status,
+        sha1: e.detail.file.res.data
+      },
+      success(res) {
+        // do something
+      }
+    })
+  },
+  sign_onComplete_2(e) {
+    wx.hideLoading()
+  },
+  sign_onFail_2(e) {
+    // do something
+  },
+  sign_onPreview_2(e) {
+    const { file, fileList } = e.detail
+    wx.previewImage({
+      current: file.url,
+      urls: fileList.map((n) => n.url),
+    })
+  },
+  sign_onRemove_2(e) {
+    const { file, fileList } = e.detail
+    wx.showModal({
+      content: '确定删除？',
+      success: (res) => {
+        if (res.confirm) {
+          this.setData({
+            sign_fileList_2: fileList.filter((n) => n.uid !== file.uid),
+          });
+          // 判断当前图片列表是否等于0,要在确定按钮设置下一个tab的禁用状态
+          // if (e.detail.fileList.length == 0) {
+          //   this.setData({
+          //     server_active_4: true
+          //   });
+          // }
+        }
+      },
+    })
+  },
+
+  //03
+  sign_onChange_3(e) {
+    const { file } = e.detail
+    if (file.status === 'uploading') {
+      this.setData({
+        progress: 0
+      })
+      wx.showLoading()
+    } else if (file.status === 'done') {
+      // do something
+    } else if (file.status === 'remove') {
+      console.log("我要告诉后台删除图片");
+    }
+  },
+  sign_onSuccess_3(e) {
+    // 判断当前上传图片列表中是否有图片
+    if (e.detail.fileList.length > 0) {
+      this.setData({
+        sign_active_4: false
+      });
+    }
+
+    var _this = this;
+    wx.request({
+      url: 'https://request.hejianzhiyang.com/Shouji/cc', //获取已上传图片列表
+      method: "POST",
+      data: {
+        uid: e.detail.file.uid,
+        status: e.detail.file.status,
+        sha1: e.detail.file.res.data
+      },
+      success(res) {
+        // do something
+      }
+    })
+  },
+  sign_onComplete_3(e) {
+    wx.hideLoading()
+  },
+  sign_onFail_3(e) {
+    // do something
+  },
+  sign_onPreview_3(e) {
+    const { file, fileList } = e.detail
+    wx.previewImage({
+      current: file.url,
+      urls: fileList.map((n) => n.url),
+    })
+  },
+  sign_onRemove_3(e) {
+    const { file, fileList } = e.detail
+    wx.showModal({
+      content: '确定删除？',
+      success: (res) => {
+        if (res.confirm) {
+          this.setData({
+            sign_fileList_3: fileList.filter((n) => n.uid !== file.uid),
+          });
+          // 判断当前图片列表是否等于0,要在确定按钮设置下一个tab的禁用状态
+          // if (e.detail.fileList.length == 0) {
+          //   this.setData({
+          //     server_active_4: true
+          //   });
+          // }
+        }
+      },
+    })
+  },
+
+  //04
+  sign_onChange_4(e) {
+    const { file } = e.detail
+    if (file.status === 'uploading') {
+      this.setData({
+        progress: 0
+      })
+      wx.showLoading()
+    } else if (file.status === 'done') {
+      // do something
+    } else if (file.status === 'remove') {
+      console.log("我要告诉后台删除图片");
+    }
+  },
+  sign_onSuccess_4(e) {
+    // 判断当前上传图片列表中是否有图片
+    if (e.detail.fileList.length > 0) {
+      this.setData({
+        sign_active_5: false
+      });
+    }
+
+    var _this = this;
+    wx.request({
+      url: 'https://request.hejianzhiyang.com/Shouji/cc', //获取已上传图片列表
+      method: "POST",
+      data: {
+        uid: e.detail.file.uid,
+        status: e.detail.file.status,
+        sha1: e.detail.file.res.data
+      },
+      success(res) {
+        // do something
+      }
+    })
+  },
+  sign_onComplete_4(e) {
+    wx.hideLoading()
+  },
+  sign_onFail_4(e) {
+    // do something
+  },
+  sign_onPreview_4(e) {
+    const { file, fileList } = e.detail
+    wx.previewImage({
+      current: file.url,
+      urls: fileList.map((n) => n.url),
+    })
+  },
+  sign_onRemove_4(e) {
+    const { file, fileList } = e.detail
+    wx.showModal({
+      content: '确定删除？',
+      success: (res) => {
+        if (res.confirm) {
+          this.setData({
+            sign_fileList_4: fileList.filter((n) => n.uid !== file.uid),
+          });
+          // 判断当前图片列表是否等于0,要在确定按钮设置下一个tab的禁用状态
+          // if (e.detail.fileList.length == 0) {
+          //   this.setData({
+          //     server_active_4: true
+          //   });
+          // }
+        }
+      },
+    })
+  },
+
+  //05
+  sign_onChange_5(e) {
+    const { file } = e.detail
+    if (file.status === 'uploading') {
+      this.setData({
+        progress: 0
+      })
+      wx.showLoading()
+    } else if (file.status === 'done') {
+      // do something
+    } else if (file.status === 'remove') {
+      console.log("我要告诉后台删除图片");
+    }
+  },
+  sign_onSuccess_5(e) {
+    // 判断当前上传图片列表中是否有图片
+    // if (e.detail.fileList.length > 0) {
+    //   this.setData({
+    //     sign_active_5: false
+    //   });
+    // }
+
+    var _this = this;
+    wx.request({
+      url: 'https://request.hejianzhiyang.com/Shouji/cc', //获取已上传图片列表
+      method: "POST",
+      data: {
+        uid: e.detail.file.uid,
+        status: e.detail.file.status,
+        sha1: e.detail.file.res.data
+      },
+      success(res) {
+        // do something
+      }
+    })
+  },
+  sign_onComplete_5(e) {
+    wx.hideLoading()
+  },
+  sign_onFail_5(e) {
+    // do something
+  },
+  sign_onPreview_5(e) {
+    const { file, fileList } = e.detail
+    wx.previewImage({
+      current: file.url,
+      urls: fileList.map((n) => n.url),
+    })
+  },
+  sign_onRemove_5(e) {
+    const { file, fileList } = e.detail
+    wx.showModal({
+      content: '确定删除？',
+      success: (res) => {
+        if (res.confirm) {
+          this.setData({
+            sign_fileList_5: fileList.filter((n) => n.uid !== file.uid),
+          });
+          // 判断当前图片列表是否等于0,要在确定按钮设置下一个tab的禁用状态
+          // if (e.detail.fileList.length == 0) {
+          //   this.setData({
+          //     server_active_4: true
+          //   });
+          // }
+        }
+      },
+    })
+  },
+
+
+  // 图纸
+  //00
+  drawing_onChange_0(e) {
+    const { file } = e.detail
+    if (file.status === 'uploading') {
+      this.setData({
+        progress: 0
+      })
+      wx.showLoading()
+    } else if (file.status === 'done') {
+      // do something
+    } else if (file.status === 'remove') {
+      console.log("我要告诉后台删除图片");
+    }
+  },
+  drawing_onSuccess_0(e) {
+    // 判断当前上传图片列表中是否有图片
+    if (e.detail.fileList.length > 0) {
+      this.setData({
+        drawing_active_1: false
+      });
+    }
+
+    var _this = this;
+    wx.request({
+      url: 'https://request.hejianzhiyang.com/Shouji/cc', //获取已上传图片列表
+      method: "POST",
+      data: {
+        uid: e.detail.file.uid,
+        status: e.detail.file.status,
+        sha1: e.detail.file.res.data
+      },
+      success(res) {
+        // do something
+      }
+    })
+  },
+  drawing_onComplete_0(e) {
+    wx.hideLoading()
+  },
+  drawing_onFail_0(e) {
+    // do something
+  },
+  drawing_onPreview_0(e) {
+    const { file, fileList } = e.detail
+    wx.previewImage({
+      current: file.url,
+      urls: fileList.map((n) => n.url),
+    })
+  },
+  drawing_onRemove_0(e) {
+    const { file, fileList } = e.detail
+    wx.showModal({
+      content: '确定删除？',
+      success: (res) => {
+        if (res.confirm) {
+          this.setData({
+            drawing_fileList_0: fileList.filter((n) => n.uid !== file.uid),
+          });
+          // 判断当前图片列表是否等于0,要在确定按钮设置下一个tab的禁用状态
+          // if (e.detail.fileList.length == 0) {
+          //   this.setData({
+          //     server_active_4: true
+          //   });
+          // }
+        }
+      },
+    })
+  },
+
+  //01
+  drawing_onChange_1(e) {
+    const { file } = e.detail
+    if (file.status === 'uploading') {
+      this.setData({
+        progress: 0
+      })
+      wx.showLoading()
+    } else if (file.status === 'done') {
+      // do something
+    } else if (file.status === 'remove') {
+      console.log("我要告诉后台删除图片");
+    }
+  },
+  drawing_onSuccess_1(e) {
+    // 判断当前上传图片列表中是否有图片
+    // if (e.detail.fileList.length > 0) {
+    //   this.setData({
+    //     sign_active_5: false
+    //   });
+    // }
+
+    var _this = this;
+    wx.request({
+      url: 'https://request.hejianzhiyang.com/Shouji/cc', //获取已上传图片列表
+      method: "POST",
+      data: {
+        uid: e.detail.file.uid,
+        status: e.detail.file.status,
+        sha1: e.detail.file.res.data
+      },
+      success(res) {
+        // do something
+      }
+    })
+  },
+  drawing_onComplete_1(e) {
+    wx.hideLoading()
+  },
+  drawing_onFail_1(e) {
+    // do something
+  },
+  drawing_onPreview_1(e) {
+    const { file, fileList } = e.detail
+    wx.previewImage({
+      current: file.url,
+      urls: fileList.map((n) => n.url),
+    })
+  },
+  drawing_onRemove_1(e) {
+    const { file, fileList } = e.detail
+    wx.showModal({
+      content: '确定删除？',
+      success: (res) => {
+        if (res.confirm) {
+          this.setData({
+            drawing_fileList_1: fileList.filter((n) => n.uid !== file.uid),
+          });
+          // 判断当前图片列表是否等于0,要在确定按钮设置下一个tab的禁用状态
+          // if (e.detail.fileList.length == 0) {
+          //   this.setData({
+          //     server_active_4: true
+          //   });
+          // }
+        }
+      },
+    })
+  },
+
+  // 交底
+  //00
+  test_onChange_0(e) {
+    const { file } = e.detail
+    if (file.status === 'uploading') {
+      this.setData({
+        progress: 0
+      })
+      wx.showLoading()
+    } else if (file.status === 'done') {
+      // do something
+    } else if (file.status === 'remove') {
+      console.log("我要告诉后台删除图片");
+    }
+  },
+  test_onSuccess_0(e) {
+    // 判断当前上传图片列表中是否有图片
+    // if (e.detail.fileList.length > 0) {
+    //   this.setData({
+    //     sign_active_5: false
+    //   });
+    // }
+
+    var _this = this;
+    wx.request({
+      url: 'https://request.hejianzhiyang.com/Shouji/cc', //获取已上传图片列表
+      method: "POST",
+      data: {
+        uid: e.detail.file.uid,
+        status: e.detail.file.status,
+        sha1: e.detail.file.res.data
+      },
+      success(res) {
+        // do something
+      }
+    })
+  },
+  test_onComplete_0(e) {
+    wx.hideLoading()
+  },
+  test_onFail_0(e) {
+    // do something
+  },
+  test_onPreview_0(e) {
+    const { file, fileList } = e.detail
+    wx.previewImage({
+      current: file.url,
+      urls: fileList.map((n) => n.url),
+    })
+  },
+  test_onRemove_0(e) {
+    const { file, fileList } = e.detail
+    wx.showModal({
+      content: '确定删除？',
+      success: (res) => {
+        if (res.confirm) {
+          this.setData({
+            test_fileList_0: fileList.filter((n) => n.uid !== file.uid),
+          });
+          // 判断当前图片列表是否等于0,要在确定按钮设置下一个tab的禁用状态
+          // if (e.detail.fileList.length == 0) {
+          //   this.setData({
+          //     server_active_4: true
+          //   });
+          // }
+        }
+      },
+    })
+  },
+
+  // 开工仪式
+  //00
+  workRite_onChange_0(e) {
+    const { file } = e.detail
+    if (file.status === 'uploading') {
+      this.setData({
+        progress: 0
+      })
+      wx.showLoading()
+    } else if (file.status === 'done') {
+      // do something
+    } else if (file.status === 'remove') {
+      console.log("我要告诉后台删除图片");
+    }
+  },
+  workRite_onSuccess_0(e) {
+    // 判断当前上传图片列表中是否有图片
+    // if (e.detail.fileList.length > 0) {
+    //   this.setData({
+    //     sign_active_5: false
+    //   });
+    // }
+
+    var _this = this;
+    wx.request({
+      url: 'https://request.hejianzhiyang.com/Shouji/cc', //获取已上传图片列表
+      method: "POST",
+      data: {
+        uid: e.detail.file.uid,
+        status: e.detail.file.status,
+        sha1: e.detail.file.res.data
+      },
+      success(res) {
+        // do something
+      }
+    })
+  },
+  workRite_onComplete_0(e) {
+    wx.hideLoading()
+  },
+  workRite_onFail_0(e) {
+    // do something
+  },
+  workRite_onPreview_0(e) {
+    const { file, fileList } = e.detail
+    wx.previewImage({
+      current: file.url,
+      urls: fileList.map((n) => n.url),
+    })
+  },
+  test_onRemove_0(e) {
+    const { file, fileList } = e.detail
+    wx.showModal({
+      content: '确定删除？',
+      success: (res) => {
+        if (res.confirm) {
+          this.setData({
+            workRite_fileList_0: fileList.filter((n) => n.uid !== file.uid),
           });
           // 判断当前图片列表是否等于0,要在确定按钮设置下一个tab的禁用状态
           // if (e.detail.fileList.length == 0) {

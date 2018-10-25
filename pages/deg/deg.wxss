@@ -2,6 +2,14 @@
 .deg_title{
   padding: 20rpx 10rpx;
 }
+.deg_title_un{
+  text-indent:10rpx;
+  font-weight:bold;
+  font-size:40rpx;
+  border-bottom: 1rpx solid #eee;
+  padding: 20rpx 10rpx;
+  margin-bottom: 10rpx;
+}
 .deg_title .van-col{
   text-indent: 10rpx;
   font-weight: bold;

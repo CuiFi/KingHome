@@ -11,5 +11,22 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "合建金管家",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "selectedColor":"#f44",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath":"img/edit.png",
+        "selectedIconPath":"img/edit_cover.png"
+      },
+      {
+        "pagePath": "pages/deg/deg",
+        "text": "日志",
+        "iconPath": "img/edit.png",
+        "selectedIconPath": "img/edit_cover.png"
+      }
+    ]
   }
 }

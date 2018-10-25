@@ -6,6 +6,8 @@
     "van-tab": "/vantdist/tab/index",
     "van-tabs": "/vantdist/tabs/index",
     "wux-upload": "../../wuxdist/upload/index",
-    "wux-icon": "../../wuxdist/icon/index"
+    "wux-icon": "../../wuxdist/icon/index",
+    "van-tabbar": "/vantdist/tabbar/index",
+    "van-tabbar-item": "/vantdist/tabbar-item/index"
   }
 }

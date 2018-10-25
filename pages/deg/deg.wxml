@@ -47,30 +47,73 @@
         </wux-upload>
       </van-tab>
       <van-tab disabled="{{sign_active_1}}" title="报价单" custom-class="deg_cont">
-        <wux-upload list-type="picture-card" file-list="{{ sign_fileList_1 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="onChange1" bind:success="onSuccess1" bind:fail="onFail1" bind:complete="onComplete1" bind:preview="onPreview1" bind:remove="onRemove1">
+        <wux-upload list-type="picture-card" file-list="{{ sign_fileList_1 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="sign_onChange_1" bind:success="sign_onSuccess_1" bind:fail="sign_onFail_1" bind:complete="sign_onComplete_1" bind:preview="sign_onPreview_1" bind:remove="sign_onRemove_1">
             <wux-icon type='ios-add' size="50"/>
         </wux-upload>
       </van-tab>
       <van-tab disabled="{{sign_active_2}}" title="设计协议" custom-class="deg_cont">
-        <wux-upload list-type="picture-card" file-list="{{ sign_fileList_2 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="onChange2" bind:success="onSuccess2" bind:fail="onFail2" bind:complete="onComplete2" bind:preview="onPreview2" bind:remove="onRemove2">
+        <wux-upload list-type="picture-card" file-list="{{ sign_fileList_2 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="sign_onChange_2" bind:success="sign_onSuccess_2" bind:fail="sign_onFail_2" bind:complete="sign_onComplete_2" bind:preview="sign_onPreview_2" bind:remove="sign_onRemove_2">
             <wux-icon type='ios-add' size="50"/>
         </wux-upload>
       </van-tab>
       <van-tab disabled="{{sign_active_3}}" title="施工协议" custom-class="deg_cont">
-        <wux-upload list-type="picture-card" file-list="{{ sign_fileList_3 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="onChange3" bind:success="onSuccess3" bind:fail="onFail3" bind:complete="onComplete3" bind:preview="onPreview3" bind:remove="onRemove3">
+        <wux-upload list-type="picture-card" file-list="{{ sign_fileList_3 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="sign_onChange_3" bind:success="sign_onSuccess_3" bind:fail="sign_onFail_3" bind:complete="sign_onComplete_3" bind:preview="sign_onPreview_3" bind:remove="sign_onRemove_3">
             <wux-icon type='ios-add' size="50"/>
         </wux-upload>
       </van-tab>
       <van-tab disabled="{{sign_active_4}}" title="优惠协议" custom-class="deg_cont">
-        <wux-upload list-type="picture-card" file-list="{{ sign_fileList_4 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="onChange4" bind:success="onSuccess4" bind:fail="onFail4" bind:complete="onComplete4" bind:preview="onPreview4" bind:remove="onRemove4">
+        <wux-upload list-type="picture-card" file-list="{{ sign_fileList_4 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="sign_onChange_4" bind:success="sign_onSuccess_4" bind:fail="sign_onFail_4" bind:complete="sign_onComplete_4" bind:preview="sign_onPreview_4" bind:remove="sign_onRemove_4">
             <wux-icon type='ios-add' size="50"/>
         </wux-upload>
       </van-tab>
       <van-tab disabled="{{sign_active_5}}" title="收据" custom-class="deg_cont">
-        <wux-upload list-type="picture-card" file-list="{{ sign_fileList_5 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="onChange4" bind:success="onSuccess4" bind:fail="onFail4" bind:complete="onComplete4" bind:preview="onPreview4" bind:remove="onRemove4">
+        <wux-upload list-type="picture-card" file-list="{{ sign_fileList_5 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="sign_onChange_5" bind:success="sign_onSuccess_5" bind:fail="sign_onFail_5" bind:complete="sign_onComplete_5" bind:preview="sign_onPreview_5" bind:remove="sign_onRemove_5">
             <wux-icon type='ios-add' size="50"/>
         </wux-upload>
       </van-tab>
     </van-tabs>
   </van-col>
 </van-row>
+
+<van-row custom-class="deg_title">
+  <van-col span="24">图纸</van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-tabs active="{{ drawing_active_index }}" bind:change="changeClick">
+      <van-tab disabled="{{drawing_active_0}}" title="平面图" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ drawing_fileList_0 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="drawing_onChange_0" bind:success="drawing_onSuccess_0" bind:fail="drawing_onFail_0" bind:complete="server_onComplete_0" bind:preview="drawing_onPreview_0" bind:remove="drawing_onRemove_0">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+      <van-tab disabled="{{drawing_active_1}}" title="效果图" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ drawing_fileList_1 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="drawing_onChange_1" bind:success="drawing_onSuccess_1" bind:fail="drawing_onFail_1" bind:complete="drawing_onComplete_1" bind:preview="drawing_onPreview_1" bind:remove="drawing_onRemove_1">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+    </van-tabs>
+  </van-col>
+</van-row>
+
+<van-row custom-class="deg_title_un">
+  <van-col span="24">交底</van-col>
+</van-row>
+<van-row>
+  <van-col span="24" custom-class="deg_cont">
+    <wux-upload list-type="picture-card" file-list="{{ test_fileList_0 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="test_onChange_0" bind:success="test_onSuccess_0" bind:fail="test_onFail_0" bind:complete="test_onComplete_0" bind:preview="test_onPreview_0" bind:remove="test_onRemove_0">
+        <wux-icon type='ios-add' size="50"/>
+    </wux-upload>
+  </van-col>
+</van-row>
+
+<van-row custom-class="deg_title_un">
+  <van-col span="24">开工仪式</van-col>
+</van-row>
+<van-row>
+  <van-col span="24" custom-class="deg_cont">
+    <wux-upload list-type="picture-card" file-list="{{ workRite_fileList_0 }}" url="https://request.hejianzhiyang.com/Shouji/cc" bind:change="workRite_onChange_0" bind:success="workRite_onSuccess_0" bind:fail="workRite_onFail_0" bind:complete="workRite_onComplete_0" bind:preview="workRite_onPreview_0" bind:remove="workRite_onRemove_0">
+        <wux-icon type='ios-add' size="50"/>
+    </wux-upload>
+  </van-col>
+</van-row>
+
