@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/caselist/caselist",
+    "pages/editlist/editlist",
     "pages/deg/deg",
     "pages/index/index",
     "pages/base/base",
@@ -16,16 +18,16 @@
     "selectedColor":"#f44",
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath":"img/edit.png",
-        "selectedIconPath":"img/edit_cover.png"
+        "pagePath": "pages/editlist/editlist",
+        "text": "编辑",
+        "iconPath":"img/editText.png",
+        "selectedIconPath":"img/editTextCover.png"
       },
       {
-        "pagePath": "pages/deg/deg",
-        "text": "日志",
-        "iconPath": "img/edit.png",
-        "selectedIconPath": "img/edit_cover.png"
+        "pagePath": "pages/caselist/caselist",
+        "text": "查看",
+        "iconPath": "img/list.png",
+        "selectedIconPath": "img/listCover.png"
       }
     ]
   }
