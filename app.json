@@ -1,9 +1,14 @@
 {
   "pages":[
-    "pages/caselist/caselist",
-    "pages/editlist/editlist",
-    "pages/deg/deg",
     "pages/index/index",
+    "pages/editlist/editlist",
+    
+    "pages/caselist/caselist",
+
+    
+    
+    "pages/deg/deg",
+    
     "pages/base/base",
     
     "pages/upf/upf"

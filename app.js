@@ -1,26 +1,32 @@
 //app.js
 App({
   onLaunch: function () {
+    wx.login({
+      success: res => {
+        console.log(res);
+      }
+    })
     // 检查本地是否存储之前授权过的后台传回来的url
-    // var firstUrl = wx.getStorageSync('firstUrl') || []
+    var firstUrl = wx.getStorageSync('firstUrl') || []
+    console.log(firstUrl.toString());
 
-    // if(firstUrl.length){
-    //   wx.redirectTo({
-    //     url: firstUrl.toString()
-    //   });
-    // }else{
-    //   wx.login({
-    //     success: res => {
-    //       // 发送 res.code 到后台换取 openId, sessionKey, unionId
-    //       console.log(res);
-    //       var a = '/pages/upf/upf';
-    //       wx.redirectTo({
-    //         url: a
-    //       });
-    //       wx.setStorageSync('firstUrl', a)
-    //     }
-    //   })
-    // }
+    if(firstUrl.length){
+      wx.switchTab({
+        url: firstUrl.toString()
+      });
+    }else{
+      wx.login({
+        success: res => {
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          console.log(res);
+          var a = '/pages/index/index';
+          wx.redirectTo({
+            url: a
+          });
+          wx.setStorageSync('firstUrl', a)
+        }
+      })
+    }
     
 
     // 获取用户信息

@@ -56,6 +56,7 @@ Page({
    */
   onLoad: function (options) {
     // console.log(this.data.active);
+    console.log("我是上个页面传过来的id:"+ options.id);
     var _this = this;
     wx.request({
       url: 'https://request.hejianzhiyang.com/Shouji/cc', //获取已上传图片列表

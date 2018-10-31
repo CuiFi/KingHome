@@ -11,6 +11,11 @@ Page({
         title:"长安雅苑",
         people:"李先生 13800138000"
       },
+      {
+        url: "/pages/base/base",
+        title: "长安雅苑",
+        people: "李先生 13800138000"
+      },
     ]
   },
 
@@ -18,7 +23,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -32,14 +37,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log("进入列表页面");
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    console.log("离开列表页面");
   },
 
   /**

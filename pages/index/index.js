@@ -7,20 +7,15 @@ const app = getApp()
 Page({
   data: {
     motto: '欢迎登陆合建金管家',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    // userInfo: {},
+    // hasUserInfo: false,
+    // canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
 
   goUpf:function(){
     wx.navigateTo({
-      url: '/pages/upf/upf'
+      url: '/pages/editlist/editlist'
     })
   },
 
@@ -32,18 +27,19 @@ Page({
     if (e.detail.errMsg == "getPhoneNumber:fail user deny" || e.detail.errMsg == "getPhoneNumber:fail:cancel to confirm login") {
       // 拒绝时候什么都不执行
     } else {
-
       wx.request({
-        url: 'https://request.hejianzhiyang.com/Qd/getphone', //仅为示例，并非真实的接口地址
+        url: 'https://request.hejianzhiyang.com/Qd/getphone', //向后台发送用于解密手机号的相关参数
         method: "POST",
         data: {
           iv: e.detail.iv,
           encryptedData: e.detail.encryptedData,
         },
         success: function (res) {
-          let url = '/pages/upf/upf';//res.url
-          wx.setStorageSync('firstUrl', url)
-          wx.redirectTo({
+          let url = '/pages/editlist/editlist';//从后台得到的手机号匹配权限相关路径 res.url
+          let id = '2';
+          wx.setStorageSync('id', id);
+          wx.setStorageSync('firstUrl', url);
+          wx.switchTab({
             url: url,
           })
         }
@@ -92,6 +88,13 @@ Page({
       }
     });
   },
+
+  onShareAppMessage:function(){
+    return {
+      title: '自定义转发标题',
+      path: '/page/user?id=123'
+    }
+  }
 
 
 
