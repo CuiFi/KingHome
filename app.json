@@ -1,16 +1,10 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/editlist/editlist",
-    
+    "pages/editlist/editlist",  
     "pages/caselist/caselist",
-
-    
-    
     "pages/deg/deg",
-    
-    "pages/base/base",
-    
+    "pages/showpage/showpage",
     "pages/upf/upf"
   ],
   "window":{

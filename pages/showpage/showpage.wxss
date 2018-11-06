@@ -1,0 +1,8 @@
+@import '/styles/weui.wxss';
+page{
+    background-color: #FFFFFF;
+    font-size: 16px;
+}
+image{
+    margin: 4px 0;
+}

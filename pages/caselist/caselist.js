@@ -7,12 +7,12 @@ Page({
   data: {
     lists:[
       {
-        url:"/pages/base/base",
+        url:"/pages/showpage/showpage?id=9",
         title:"长安雅苑",
         people:"李先生 13800138000"
       },
       {
-        url: "/pages/base/base",
+        url: "/pages/showpage/showpage?id=8",
         title: "长安雅苑",
         people: "李先生 13800138000"
       },

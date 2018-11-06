@@ -5,7 +5,38 @@ Page({
    * 页面的初始数据
    */
   data: {
-    grids: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    grids: [
+      {
+        url: '/pages/deg/deg?id=5',
+        text: "东海岸长安哇哈哈",
+        imgUrl: "/img/icon_tabbar.png"
+      },
+      {
+        url: '/pages/deg/deg?id=5',
+        text: "东海岸长安哇哈哈",
+        imgUrl: "/img/icon_tabbar.png"
+      },
+      {
+        url: '/pages/deg/deg?id=5',
+        text: "东海岸长安哇哈哈",
+        imgUrl: "/img/icon_tabbar.png"
+      },
+      {
+        url: '/pages/deg/deg?id=5',
+        text: "东海岸长安哇哈哈",
+        imgUrl: "/img/icon_tabbar.png"
+      },
+      {
+        url: '/pages/deg/deg?id=5',
+        text: "东海岸长安哇哈哈",
+        imgUrl: "/img/icon_tabbar.png"
+      },
+      {
+        url: '/pages/deg/deg?id=5',
+        text: "东海岸长安哇哈哈",
+        imgUrl: "/img/icon_tabbar.png"
+      }
+    ]
   },
 
   /**
