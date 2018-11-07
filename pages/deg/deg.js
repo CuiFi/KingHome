@@ -43,6 +43,10 @@ Page({
     sign_fileList_3: [],
     sign_fileList_4: [],
     sign_fileList_5: [],
+    // 交底
+    test_fileList_0:[],
+    // 开工仪式
+    workRite_fileList_0:[],
     
   },
 
@@ -59,16 +63,28 @@ Page({
     console.log("我是上个页面传过来的id:"+ options.id);
     var _this = this;
     wx.request({
-      url: 'https://request.hejianzhiyang.com/Shouji/cc', //获取已上传图片列表
+      url: 'https://request.hejianzhiyang.com/Shouji/cc'+options.id, //获取已上传图片列表
       method: "GET",
       data:{},//openid 用于获取对应信息
       success(res) {
         _this.setData({
-          fileList0: res,
-          fileList1: res,
-          fileList2: res,
-          fileList3: res,
-          fileList4: res
+          // 服务团队
+          server_fileList_0: res,
+          server_fileList_1: res,
+          server_fileList_2: res,
+          server_fileList_3: res,
+          server_fileList_4: res,
+          // 签约
+          sign_fileList_0: res,
+          sign_fileList_1: res,
+          sign_fileList_2: res,
+          sign_fileList_3: res,
+          sign_fileList_4: res,
+          sign_fileList_5: res,
+          // 交底
+          test_fileList_0: res,
+          // 开工仪式
+          workRite_fileList_0: res,
         });
         // console.log(res.data)
       }
@@ -193,7 +209,9 @@ Page({
       data: {
         uid: e.detail.file.uid,
         status: e.detail.file.status,
-        sha1: e.detail.file.res.data
+        sha1: e.detail.file.res.data,
+        // 还要加上具体项目的id
+        cid:"2"
       },
       success(res) {
         // do something

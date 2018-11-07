@@ -9,7 +9,7 @@ Page({
       {
         url: '/pages/deg/deg?id=5',
         text: "东海岸长安哇哈哈",
-        imgUrl: "/img/icon_tabbar.png"
+        imgUrl: "/img/anli.jpg"
       },
       {
         url: '/pages/deg/deg?id=5',
@@ -28,7 +28,7 @@ Page({
       },
       {
         url: '/pages/deg/deg?id=5',
-        text: "东海岸长安哇哈哈",
+        text: "东海岸长",
         imgUrl: "/img/icon_tabbar.png"
       },
       {
@@ -39,12 +39,24 @@ Page({
     ]
   },
 
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var id = wx.getStorageSync('id') || []
-    console.log(id);
+    // console.log(typeof ("hello:" + id));
+    // 根据id获取当前身份具体人的案例列表信息
+    wx.request({
+      url: 'https://request.hejianzhiyang.com/Shouji/cc?id='+id,
+      method: "GET",
+      data: {},//openid 用于获取对应信息
+      success:function(res){
+        this.setData({
+          grids:res.data
+        });
+      }
+    })
   },
 
   /**

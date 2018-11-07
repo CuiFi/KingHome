@@ -13,11 +13,11 @@ Page({
   },
   //事件处理函数
 
-  goUpf:function(){
-    wx.navigateTo({
-      url: '/pages/editlist/editlist'
-    })
-  },
+  // goUpf:function(){
+  //   wx.navigateTo({
+  //     url: '/pages/editlist/editlist'
+  //   })
+  // },
 
   getPhoneNumber(e) {
     console.log(e.detail.errMsg)
@@ -35,13 +35,19 @@ Page({
           encryptedData: e.detail.encryptedData,
         },
         success: function (res) {
-          let url = '/pages/editlist/editlist';//从后台得到的手机号匹配权限相关路径 res.url
-          let id = '2';
+          let url = '/pages/editlist/editlist';//从后台得到的手机号匹配权限相关路径 res.url  /pages/editlist/editlist
+          let id = '2'; //从后台得到的手机号匹配权限相关具体人员标识 res.id 
           wx.setStorageSync('id', id);
           wx.setStorageSync('firstUrl', url);
-          wx.switchTab({
-            url: url,
-          })
+          if(url == '/pages/showpage/showpage'){
+            wx.navigateTo({
+              url: url,
+            })
+          }else{
+            wx.switchTab({
+              url: url,
+            })
+          }
         }
       })
     }

@@ -18,12 +18,12 @@ App({
       wx.login({
         success: res => {
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
-          console.log(res);
-          var a = '/pages/index/index';
+          // console.log(res);
+          // var a = '/pages/index/index';
           wx.redirectTo({
-            url: a
+            url: '/pages/index/index'
           });
-          wx.setStorageSync('firstUrl', a)
+          // wx.setStorageSync('firstUrl', a)
         }
       })
     }
