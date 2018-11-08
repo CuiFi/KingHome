@@ -1,31 +1,44 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function (obj) {
+    console.log(obj.scene);
     wx.login({
       success: res => {
-        console.log(res);
+        // console.log(res);
+        // 发送code给后端,用于后续解密手机号
+        wx.request({
+          url: 'https://request.hejianzhiyang.com/Shouji/cc',
+          method:'GET',
+          data:{
+            code:res.code
+          }
+        })
       }
     })
     // 检查本地是否存储之前授权过的后台传回来的url
     var firstUrl = wx.getStorageSync('firstUrl') || []
-    console.log(firstUrl.toString());
+    // console.log(firstUrl.toString());
+    // console.log(typeof firstUrl.length);
 
     if(firstUrl.length){
       wx.switchTab({
         url: firstUrl.toString()
       });
     }else{
-      wx.login({
-        success: res => {
+      wx.redirectTo({
+        url: '/pages/index/index'
+      });
+      // wx.login({
+        // success: res => {
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
           // console.log(res);
           // var a = '/pages/index/index';
-          wx.redirectTo({
-            url: '/pages/index/index'
-          });
+          // wx.redirectTo({
+            // url: '/pages/index/index'
+          // });
           // wx.setStorageSync('firstUrl', a)
-        }
-      })
+        // }
+      // })
     }
     
 

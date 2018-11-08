@@ -21,8 +21,8 @@ Page({
 
   getPhoneNumber(e) {
     console.log(e.detail.errMsg)
-    console.log(e.detail.iv)
-    console.log(e.detail.encryptedData)
+    console.log(typeof e.detail.iv)
+    console.log(typeof e.detail.encryptedData)
 
     if (e.detail.errMsg == "getPhoneNumber:fail user deny" || e.detail.errMsg == "getPhoneNumber:fail:cancel to confirm login") {
       // 拒绝时候什么都不执行
@@ -37,8 +37,12 @@ Page({
         success: function (res) {
           let url = '/pages/editlist/editlist';//从后台得到的手机号匹配权限相关路径 res.url  /pages/editlist/editlist
           let id = '2'; //从后台得到的手机号匹配权限相关具体人员标识 res.id 
+          // let name = '设计师';  // 用于得知身份,后续进行路径匹配
+
           wx.setStorageSync('id', id);
           wx.setStorageSync('firstUrl', url);
+          // wx.setStorageSync('name', name);
+
           if(url == '/pages/showpage/showpage'){
             wx.navigateTo({
               url: url,

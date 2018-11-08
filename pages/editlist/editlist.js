@@ -44,6 +44,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var _this = this;
     var id = wx.getStorageSync('id') || []
     // console.log(typeof ("hello:" + id));
     // 根据id获取当前身份具体人的案例列表信息
@@ -52,8 +53,8 @@ Page({
       method: "GET",
       data: {},//openid 用于获取对应信息
       success:function(res){
-        this.setData({
-          grids:res.data
+        _this.setData({
+          // grids:res.data
         });
       }
     })

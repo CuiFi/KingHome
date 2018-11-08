@@ -6,10 +6,10 @@ Page({
    */
   data: {
     cont: {
-      txth1: "大标题",
-      txth2: "章标题",
-      txth3: "节标题",
-      txtp: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      txth1: "兰特花园",
+      txth2: "张三",
+      txth3: "2018.1.1",
+      txtp: "此处是我们家项目的介绍",
       oneImg: [
         {
           url: '/img/pic_article.png'
@@ -25,6 +25,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var _this = this;
     console.log("展示页面所用id:"+options.id);
     // var id = wx.getStorageSync('id') || []
     // console.log(typeof ("hello:" + id));
@@ -34,8 +35,8 @@ Page({
       method: "GET",
       data: {},//openid 用于获取对应信息
       success: function (res) {
-        this.setData({
-          cont: res.data
+        _this.setData({
+          // cont: res.data
         });
       }
     })

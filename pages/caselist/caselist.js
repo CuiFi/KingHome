@@ -23,6 +23,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var _this = this;
     var id = wx.getStorageSync('id') || []
     // console.log(typeof ("hello:" + id));
     // 根据id获取当前身份具体人的客户列表信息
@@ -30,8 +31,8 @@ Page({
       url: 'https://request.hejianzhiyang.com/Shouji/cc?id=' + id,
       method: "GET",
       success: function (res) {
-        this.setData({
-          lists: res.data
+        _this.setData({
+          // lists: res.data
         });
       }
     })
