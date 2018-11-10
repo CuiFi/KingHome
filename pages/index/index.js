@@ -20,23 +20,25 @@ Page({
   // },
 
   getPhoneNumber(e) {
-    console.log(e.detail.errMsg)
-    console.log(typeof e.detail.iv)
-    console.log(typeof e.detail.encryptedData)
+    // console.log(e.detail.errMsg)
+    // console.log(typeof e.detail.iv)
+    // console.log(typeof e.detail.encryptedData)
 
     if (e.detail.errMsg == "getPhoneNumber:fail user deny" || e.detail.errMsg == "getPhoneNumber:fail:cancel to confirm login") {
       // 拒绝时候什么都不执行
     } else {
       wx.request({
-        url: 'https://request.hejianzhiyang.com/Qd/getphone', //向后台发送用于解密手机号的相关参数
+        url: 'https://request.hejianzhiyang.com/Jinguanjia/getphone', //向后台发送用于解密手机号的相关参数
         method: "POST",
         data: {
           iv: e.detail.iv,
           encryptedData: e.detail.encryptedData,
+          session_key: wx.getStorageSync("session_key")
         },
         success: function (res) {
-          let url = '/pages/editlist/editlist';//从后台得到的手机号匹配权限相关路径 res.url  /pages/editlist/editlist
-          let id = '2'; //从后台得到的手机号匹配权限相关具体人员标识 res.id 
+          console.log(res);
+          let url = res.data.url;//从后台得到的手机号匹配权限相关路径 res.url  /pages/editlist/editlist
+          let id = res.data.id; //从后台得到的手机号匹配权限相关具体人员标识 res.id 
           // let name = '设计师';  // 用于得知身份,后续进行路径匹配
 
           wx.setStorageSync('id', id);

@@ -5,6 +5,7 @@
     "pages/caselist/caselist",
     "pages/deg/deg",
     "pages/showpage/showpage",
+    "pages/pr/pr",
     "pages/upf/upf"
   ],
   "window":{

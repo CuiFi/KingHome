@@ -1,0 +1,9 @@
+/* pages/pr/pr.wxss */
+.itemImg{
+  width: 80px;
+  height: 80px;
+  vertical-align: middle;
+}
+.imgOut{
+  text-align: center;
+}

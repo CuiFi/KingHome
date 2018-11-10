@@ -1,0 +1,7 @@
+<van-row>
+  <block wx:for-items="{{ urls }}" wx:key="{{ index }}">
+    <van-col custom-class="imgOut" span="6" bindtap="previewImage" data-current="{{ item }}">
+      <image class='itemImg' src="{{ item }}"></image>
+    </van-col>
+  </block>
+</van-row>

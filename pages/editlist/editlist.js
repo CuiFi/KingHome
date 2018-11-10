@@ -5,38 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    grids: [
-      {
-        url: '/pages/deg/deg?id=5',
-        text: "东海岸长安哇哈哈",
-        imgUrl: "/img/anli.jpg"
-      },
-      {
-        url: '/pages/deg/deg?id=5',
-        text: "东海岸长安哇哈哈",
-        imgUrl: "/img/icon_tabbar.png"
-      },
-      {
-        url: '/pages/deg/deg?id=5',
-        text: "东海岸长安哇哈哈",
-        imgUrl: "/img/icon_tabbar.png"
-      },
-      {
-        url: '/pages/deg/deg?id=5',
-        text: "东海岸长安哇哈哈",
-        imgUrl: "/img/icon_tabbar.png"
-      },
-      {
-        url: '/pages/deg/deg?id=5',
-        text: "东海岸长",
-        imgUrl: "/img/icon_tabbar.png"
-      },
-      {
-        url: '/pages/deg/deg?id=5',
-        text: "东海岸长安哇哈哈",
-        imgUrl: "/img/icon_tabbar.png"
-      }
-    ]
+    grids: []
   },
 
 
@@ -45,18 +14,27 @@ Page({
    */
   onLoad: function (options) {
     var _this = this;
-    var id = wx.getStorageSync('id') || []
-    // console.log(typeof ("hello:" + id));
+    var theId = wx.getStorageSync('id') || []
+    // console.log("hello:" + theId);
     // 根据id获取当前身份具体人的案例列表信息
     wx.request({
-      url: 'https://request.hejianzhiyang.com/Shouji/cc?id='+id,
-      method: "GET",
-      data: {},//openid 用于获取对应信息
+      url: 'https://request.hejianzhiyang.com/Jinguanjia/editlist',
+      method: "POST",
+      data: {
+        id: theId
+      },
       success:function(res){
+        console.log(res);
         _this.setData({
-          // grids:res.data
+          grids:res.data
         });
       }
+    })
+  },
+
+  ggto:function(){
+    wx.redirectTo({
+      url: '/pages/pr/pr',
     })
   },
 

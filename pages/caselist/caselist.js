@@ -5,18 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    lists:[
-      {
-        url:"/pages/showpage/showpage?id=9",
-        title:"长安雅苑",
-        people:"李先生 13800138000"
-      },
-      {
-        url: "/pages/showpage/showpage?id=8",
-        title: "长安雅苑",
-        people: "李先生 13800138000"
-      },
-    ]
+    lists:[]
   },
 
   /**
@@ -24,15 +13,18 @@ Page({
    */
   onLoad: function (options) {
     var _this = this;
-    var id = wx.getStorageSync('id') || []
+    var theId = wx.getStorageSync('id') || []
     // console.log(typeof ("hello:" + id));
     // 根据id获取当前身份具体人的客户列表信息
     wx.request({
-      url: 'https://request.hejianzhiyang.com/Shouji/cc?id=' + id,
-      method: "GET",
+      url: 'https://request.hejianzhiyang.com/Jinguanjia/showlist',
+      method: "POST",
+      data:{
+        id: theId
+      },
       success: function (res) {
         _this.setData({
-          // lists: res.data
+          lists: res.data
         });
       }
     })

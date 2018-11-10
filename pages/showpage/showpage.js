@@ -35,6 +35,7 @@ Page({
       method: "GET",
       data: {},//openid 用于获取对应信息
       success: function (res) {
+        console.log(res);
         _this.setData({
           // cont: res.data
         });

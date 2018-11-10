@@ -9,24 +9,25 @@ Page({
     // 储存页面渲染完成要加载的tab
     server_active_index:0,
     sign_active_index:0,
+    drawing_active_index:0,
 
     // 用于设置tab显示与隐藏的数据绑定
     // 服务团队
-    server_active_0: false,
-    server_active_1: true,
-    server_active_2: true,
-    server_active_3: true,
-    server_active_4: true,
+    // server_active_0: false,
+    // server_active_1: true,
+    // server_active_2: true,
+    // server_active_3: true,
+    // server_active_4: true,
     // 签约
-    sign_active_0: false,
-    sign_active_1: true,
-    sign_active_2: true,
-    sign_active_3: true,
-    sign_active_4: true,
-    sign_active_5: true,
+    // sign_active_0: false,
+    // sign_active_1: true,
+    // sign_active_2: true,
+    // sign_active_3: true,
+    // sign_active_4: true,
+    // sign_active_5: true,
     // 图纸
-    drawing_active_0: false,
-    drawing_active_1: true,
+    // drawing_active_0: false,
+    // drawing_active_1: true,
 
 
     // 用于显示列表图片
@@ -69,7 +70,6 @@ Page({
     test_fileList_0:[],
     // 开工仪式
     workRite_fileList_0:[],
-    
   },
 
   // 切换标签发生的事件
@@ -77,17 +77,34 @@ Page({
     console.log(e);
   },
 
+  previewImage(e) {
+    const { current } = e.currentTarget.dataset
+    const { urls } = this.data
+
+    wx.previewImage({
+      current,
+      urls,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     // console.log(this.data.active);
-    console.log("我是上个页面传过来的id:"+ options.id);
+    /* options.id 客户id
+     * 内部成员id
+     *  
+    */
+    wx.setStorageSync("kehuID", options.id);
+    // console.log("我是上个页面传过来的id:"+ options.id);
     var _this = this;
     wx.request({
-      url: 'https://request.hejianzhiyang.com/Shouji/cc'+options.id, //获取已上传图片列表
-      method: "GET",
-      data:{},//openid 用于获取对应信息
+      url: 'https://request.hejianzhiyang.com/Jinguanjia/uploadimg', //获取已上传图片列表
+      method: "POST",
+      data:{
+        editId: options.id
+      },//openid 用于获取对应信息
       success(res) {
         _this.setData({
           // 服务团队
@@ -109,6 +126,14 @@ Page({
           workRite_fileList_0: res,
         });
         // console.log(res.data)
+      }
+    });
+
+    wx.getLocation({
+      type: 'wgs84',
+      success(res) {
+        wx.setStorageSync("latitude", res.latitude);
+        wx.setStorageSync("longitude", res.longitude);
       }
     })
   },
@@ -140,12 +165,16 @@ Page({
     } else if (file.status === 'done') {
       // do something
     } else if (file.status === 'remove') {
-      console.log("我要告诉后台删除图片");
+      // console.log("我要告诉后台删除图片");
     }
   },
   server_onSuccess_0(e) {
+    let nbID = wx.getStorageSync("id");
+    let khID = wx.getStorageSync("kehuID");
+    let lat = wx.getStorageSync("latitude");
+    let lon = wx.getStorageSync("longitude");
+    let shall = JSON.parse(e.detail.file.res.data);
     // 判断当前上传图片列表中是否有图片
-    console.log(e);
     if(e.detail.fileList.length > 0){
       this.setData({
         server_active_1:false
@@ -153,14 +182,22 @@ Page({
     }
 
     var _this = this;
+    // console.log(e.detail.file.res);
+    // console.log(e.detail.file.res.data);
+    // console.log(typeof e.detail.file.res.data);
+    // console.log(JSON.parse(e.detail.file.res.data));
     wx.request({
-      url: 'https://request.hejianzhiyang.com/Shouji/cc', //获取已上传图片列表
+      url: 'https://request.hejianzhiyang.com/Jinguanjia/uploadimg', //获取已上传图片列表
       method: "POST",
       data: {
         uid: e.detail.file.uid,
         status: e.detail.file.status,
-        sha1: e.detail.file.res.data,
-        // 还要加上具体项目的id
+        sha1: shall.sha1,
+        nbid: nbID,
+        khid: khID,
+        wd:lat,
+        jd:lon,
+        // 还要加上具体项目的标签项id
         cid: "2"
       },
       success(res) {
@@ -169,14 +206,14 @@ Page({
     })
   },
   server_onFail_0(e) {
-    console.log('onFail', e)
+    // console.log('onFail', e)
   },
   server_onComplete_0(e) {
-    console.log('onComplete', e)
+    // console.log('onComplete', e)
     wx.hideLoading()
   },
   server_onPreview_0(e) {
-    console.log('onPreview', e);
+    // console.log('onPreview', e);
     const { file, fileList } = e.detail
     wx.previewImage({
       current: file.url,
@@ -184,7 +221,7 @@ Page({
     })
   },
   server_onRemove_0(e) {
-    console.log(e);
+    // console.log(e);
     const { file, fileList } = e.detail
     wx.showModal({
       content: '确定删除？',
@@ -192,6 +229,17 @@ Page({
         if (res.confirm) {
           this.setData({
             server_fileList_0: fileList.filter((n) => n.uid !== file.uid),
+          });
+          wx.request({
+            url: 'https://request.hejianzhiyang.com/Jinguanjia/deelteimg',
+            method:'POST',
+            data:{
+              status:e.detail.file.status,
+              uid: e.detail.file.uid
+            },
+            success: (res) => {
+              // do something
+            }
           });
           // 判断当前图片列表是否等于0,要在确定按钮设置下一个tab的禁用状态
           // if (e.detail.fileList.length == 0) {

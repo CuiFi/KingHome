@@ -4,13 +4,17 @@ App({
     console.log(obj.scene);
     wx.login({
       success: res => {
-        // console.log(res);
+        console.log(res.code);
         // 发送code给后端,用于后续解密手机号
         wx.request({
-          url: 'https://request.hejianzhiyang.com/Shouji/cc',
-          method:'GET',
+          url: 'https://request.hejianzhiyang.com/Jinguanjia/getsession',
+          method:'POST',
           data:{
             code:res.code
+          },
+          success:function(res){
+            console.log(res);
+            wx.setStorageSync('session_key', res.data.session_key);
           }
         })
       }
