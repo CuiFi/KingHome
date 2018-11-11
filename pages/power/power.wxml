@@ -1,0 +1,15 @@
+<!--pages/power/power.wxml-->
+<van-row custom-class="deg_title">
+  <van-col span="24">隐蔽工程</van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-tabs active="{{ power_active_index }}" bind:change="changeClick">
+      <van-tab disabled="{{power_active_0}}" title="电工施工" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ power_fileList_0 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="power_onChange_0" bind:success="power_onSuccess_0" bind:fail="power_onFail_0" bind:complete="power_onComplete_0" bind:preview="power_onPreview_0" bind:remove="power_onRemove_0">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+    </van-tabs>
+  </van-col>
+</van-row>

@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "合建金管家-水工",
+  "usingComponents": {
+    "van-row": "/vantdist/row/index",
+    "van-col": "/vantdist/col/index",
+    "van-tab": "/vantdist/tab/index",
+    "van-tabs": "/vantdist/tabs/index",
+    "wux-upload": "../../wuxdist/upload/index",
+    "wux-icon": "../../wuxdist/icon/index",
+    "van-tabbar": "/vantdist/tabbar/index",
+    "van-tabbar-item": "/vantdist/tabbar-item/index"
+  }
+}

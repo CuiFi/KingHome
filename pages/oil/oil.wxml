@@ -1,0 +1,15 @@
+<!--pages/oil/oil.wxml-->
+<van-row custom-class="deg_title">
+  <van-col span="24">油漆施工</van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-tabs active="{{ oil_active_index }}" bind:change="changeClick">
+      <van-tab disabled="{{oil_active_0}}" title="施工现场" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ oil_fileList_0 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="oil_onChange_0" bind:success="oil_onSuccess_0" bind:fail="oil_onFail_0" bind:complete="oil_onComplete_0" bind:preview="oil_onPreview_0" bind:remove="oil_onRemove_0">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+    </van-tabs>
+  </van-col>
+</van-row>

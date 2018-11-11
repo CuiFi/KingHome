@@ -1,0 +1,15 @@
+<!--pages/water/water.wxml-->
+<van-row custom-class="deg_title">
+  <van-col span="24">隐蔽工程</van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-tabs active="{{ water_active_index }}" bind:change="changeClick">
+      <van-tab disabled="{{water_active_0}}" title="水工施工" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ water_fileList_0 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="water_onChange_0" bind:success="water_onSuccess_0" bind:fail="water_onFail_0" bind:complete="water_onComplete_0" bind:preview="water_onPreview_0" bind:remove="water_onRemove_0">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+    </van-tabs>
+  </van-col>
+</van-row>

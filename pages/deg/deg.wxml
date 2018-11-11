@@ -82,7 +82,7 @@
   <van-col span="24">
     <van-tabs active="{{ drawing_active_index }}" bind:change="changeClick">
       <van-tab disabled="{{drawing_active_0}}" title="平面图" custom-class="deg_cont">
-        <wux-upload list-type="picture-card" file-list="{{ drawing_fileList_0 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="drawing_onChange_0" bind:success="drawing_onSuccess_0" bind:fail="drawing_onFail_0" bind:complete="server_onComplete_0" bind:preview="drawing_onPreview_0" bind:remove="drawing_onRemove_0">
+        <wux-upload list-type="picture-card" file-list="{{ drawing_fileList_0 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="drawing_onChange_0" bind:success="drawing_onSuccess_0" bind:fail="drawing_onFail_0" bind:complete="drawing_onComplete_0" bind:preview="drawing_onPreview_0" bind:remove="drawing_onRemove_0">
             <wux-icon type='ios-add' size="50"/>
         </wux-upload>
       </van-tab>

@@ -5,7 +5,14 @@
     "pages/caselist/caselist",
     "pages/deg/deg",
     "pages/showpage/showpage",
+    "pages/foreman/foreman",
+    "pages/water/water",
+    "pages/power/power",
+    "pages/wood/wood",
+    "pages/tiler/tiler",
+    "pages/oil/oil",
     "pages/pr/pr",
+    "pages/supervisor/supervisor",
     "pages/upf/upf"
   ],
   "window":{

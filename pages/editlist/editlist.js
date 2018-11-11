@@ -32,11 +32,16 @@ Page({
     })
   },
 
-  ggto:function(){
-    wx.redirectTo({
-      url: '/pages/pr/pr',
-    })
-  },
+  // ggto:function(){
+  //   wx.redirectTo({
+  //     url: '/pages/pr/pr',
+  //   })
+  // },
+  // ggtocs:function(){
+  //   wx.navigateTo({
+  //     url: '/pages/supervisor/supervisor',
+  //   })
+  // },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

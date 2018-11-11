@@ -18,11 +18,14 @@ Page({
   //     url: '/pages/editlist/editlist'
   //   })
   // },
+  
+  
 
   getPhoneNumber(e) {
     // console.log(e.detail.errMsg)
     // console.log(typeof e.detail.iv)
     // console.log(typeof e.detail.encryptedData)
+
 
     if (e.detail.errMsg == "getPhoneNumber:fail user deny" || e.detail.errMsg == "getPhoneNumber:fail:cancel to confirm login") {
       // 拒绝时候什么都不执行
@@ -33,7 +36,9 @@ Page({
         data: {
           iv: e.detail.iv,
           encryptedData: e.detail.encryptedData,
-          session_key: wx.getStorageSync("session_key")
+          session_key: wx.getStorageSync("session_key"),
+          wd: wx.getStorageSync("latitude"),
+          jd: wx.getStorageSync("longitude")
         },
         success: function (res) {
           console.log(res);
@@ -62,6 +67,13 @@ Page({
 
 
   onLoad: function () {
+    wx.getLocation({
+      type: 'wgs84',
+      success(res) {
+        wx.setStorageSync("latitude", res.latitude);
+        wx.setStorageSync("longitude", res.longitude);
+      }
+    });
     // if (app.globalData.userInfo) {
     //   this.setData({
     //     userInfo: app.globalData.userInfo,

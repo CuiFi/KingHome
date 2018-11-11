@@ -7,4 +7,5 @@
     </navigator>
   </block>
 </view>
-<button bindtap='ggto'>gogo</button>
+<!-- <button bindtap='ggto'>gogo</button>
+<button bindtap='ggtocs'>gogocs</button> -->

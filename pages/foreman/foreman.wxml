@@ -1,0 +1,45 @@
+<van-row custom-class="deg_title_un">
+  <van-col span="24">排期表</van-col>
+</van-row>
+<van-row>
+  <van-col span="24" custom-class="deg_cont">
+    <wux-upload list-type="picture-card" file-list="{{ paiqi_fileList_0 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="paiqi_onChange_0" bind:success="paiqi_onSuccess_0" bind:fail="paiqi_onFail_0" bind:complete="paiqi_onComplete_0" bind:preview="paiqi_onPreview_0" bind:remove="paiqi_onRemove_0">
+        <wux-icon type='ios-add' size="50"/>
+    </wux-upload>
+  </van-col>
+</van-row>
+
+
+<van-row custom-class="deg_title_un">
+  <van-col span="24">文明施工</van-col>
+</van-row>
+<van-row>
+  <van-col span="24" custom-class="deg_cont">
+    <wux-upload list-type="picture-card" file-list="{{ wenming_fileList_0 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="wenming_onChange_0" bind:success="wenming_onSuccess_0" bind:fail="wenming_onFail_0" bind:complete="wenming_onComplete_0" bind:preview="wenming_onPreview_0" bind:remove="wenming_onRemove_0">
+        <wux-icon type='ios-add' size="50"/>
+    </wux-upload>
+  </van-col>
+</van-row>
+
+<van-row custom-class="deg_title_un">
+  <van-col span="24">定制类主材配饰</van-col>
+</van-row>
+<van-row>
+  <van-col span="24" custom-class="deg_cont">
+    <wux-upload list-type="picture-card" file-list="{{ dingzhi_fileList_0 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="dingzhi_onChange_0" bind:success="dingzhi_onSuccess_0" bind:fail="dingzhi_onFail_0" bind:complete="dingzhi_onComplete_0" bind:preview="dingzhi_onPreview_0" bind:remove="dingzhi_onRemove_0">
+        <wux-icon type='ios-add' size="50"/>
+    </wux-upload>
+  </van-col>
+</van-row>
+
+
+<van-row custom-class="deg_title_un">
+  <van-col span="24">成品类主材配饰</van-col>
+</van-row>
+<van-row>
+  <van-col span="24" custom-class="deg_cont">
+    <wux-upload list-type="picture-card" file-list="{{ chengpin_fileList_0 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="chengpin_onChange_0" bind:success="chengpin_onSuccess_0" bind:fail="chengpin_onFail_0" bind:complete="chengpin_onComplete_0" bind:preview="chengpin_onPreview_0" bind:remove="chengpin_onRemove_0">
+        <wux-icon type='ios-add' size="50"/>
+    </wux-upload>
+  </van-col>
+</van-row>

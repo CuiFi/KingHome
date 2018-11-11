@@ -1,0 +1,47 @@
+<!--pages/tiler/tiler.wxml-->
+<van-row custom-class="deg_title_un">
+  <van-col span="24">墙体拆改</van-col>
+</van-row>
+<van-row>
+  <van-col span="24" custom-class="deg_cont">
+    <wux-upload list-type="picture-card" file-list="{{ tiler_fileList_0 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="tiler_onChange_0" bind:success="tiler_onSuccess_0" bind:fail="tiler_onFail_0" bind:complete="tiler_onComplete_0" bind:preview="tiler_onPreview_0" bind:remove="tiler_onRemove_0">
+        <wux-icon type='ios-add' size="50"/>
+    </wux-upload>
+  </van-col>
+</van-row>
+
+
+<van-row custom-class="deg_title">
+  <van-col span="24">隐蔽工程</van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-tabs active="{{ tilerb_active_index }}" bind:change="changeClick">
+      <van-tab disabled="{{tilerb_active_0}}" title="防水施工" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ tilerb_fileList_0 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="tilerb_onChange_0" bind:success="tilerb_onSuccess_0" bind:fail="tilerb_onFail_0" bind:complete="tilerb_onComplete_0" bind:preview="tilerb_onPreview_0" bind:remove="tilerb_onRemove_0">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+      <van-tab disabled="{{tilerb_active_1}}" title="瓦工施工" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ tilerb_fileList_1 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="tilerb_onChange_1" bind:success="tilerb_onSuccess_1" bind:fail="tilerb_onFail_1" bind:complete="tilerb_onComplete_1" bind:preview="tilerb_onPreview_1" bind:remove="tilerb_onRemove_1">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+    </van-tabs>
+  </van-col>
+</van-row>
+
+<van-row custom-class="deg_title">
+  <van-col span="24">瓦工施工</van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-tabs active="{{ tilerc_active_index }}" bind:change="changeClick">
+      <van-tab disabled="{{tilerc_active_0}}" title="施工现场" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ tilerc_fileList_0 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="tilerc_onChange_0" bind:success="tilerc_onSuccess_0" bind:fail="tilerc_onFail_0" bind:complete="tilerc_onComplete_0" bind:preview="tilerc_onPreview_0" bind:remove="tilerc_onRemove_0">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+    </van-tabs>
+  </van-col>
+</van-row>

@@ -1,0 +1,15 @@
+<!--pages/wood/wood.wxml-->
+<van-row custom-class="deg_title">
+  <van-col span="24">木工施工</van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-tabs active="{{ wood_active_index }}" bind:change="changeClick">
+      <van-tab disabled="{{wood_active_0}}" title="施工现场" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ wood_fileList_0 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="wood_onChange_0" bind:success="wood_onSuccess_0" bind:fail="wood_onFail_0" bind:complete="wood_onComplete_0" bind:preview="wood_onPreview_0" bind:remove="wood_onRemove_0">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+    </van-tabs>
+  </van-col>
+</van-row>

@@ -1,0 +1,180 @@
+<!--pages/supervisor/supervisor.wxml-->
+<van-row custom-class="deg_title">
+  <van-col span="24">隐蔽工程</van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-tabs active="{{ yinbi_active_index }}" bind:change="changeClick">
+      <van-tab disabled="{{yinbi_active_0}}" title="材料进场" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ yinbi_fileList_0 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="yinbi_onChange_0" bind:success="yinbi_onSuccess_0" bind:fail="yinbi_onFail_0" bind:complete="yinbi_onComplete_0" bind:preview="yinbi_onPreview_0" bind:remove="yinbi_onRemove_0">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+      <van-tab disabled="{{yinbi_active_1}}" title="水工施工" custom-class="deg_cont">
+        <van-row>
+          <block wx:for-items="{{ yinbi_fileList_1 }}" wx:key="{{ index }}">
+            <van-col custom-class="imgOut" span="6" bindtap="yinbi_previewImage1" data-current="{{ item }}">
+              <image class='itemImg' src="{{ item }}"></image>
+            </van-col>
+          </block>
+        </van-row>
+      </van-tab>
+      <van-tab disabled="{{yinbi_active_2}}" title="电工施工" custom-class="deg_cont">
+        <van-row>
+          <block wx:for-items="{{ yinbi_fileList_2 }}" wx:key="{{ index }}">
+            <van-col custom-class="imgOut" span="6" bindtap="yinbi_previewImage2" data-current="{{ item }}">
+              <image class='itemImg' src="{{ item }}"></image>
+            </van-col>
+          </block>
+        </van-row>
+      </van-tab>
+      <van-tab disabled="{{yinbi_active_3}}" title="防水施工" custom-class="deg_cont">
+        <van-row>
+          <block wx:for-items="{{ yinbi_fileList_3 }}" wx:key="{{ index }}">
+            <van-col custom-class="imgOut" span="6" bindtap="yinbi_previewImage3" data-current="{{ item }}">
+              <image class='itemImg' src="{{ item }}"></image>
+            </van-col>
+          </block>
+        </van-row>
+      </van-tab>
+      <van-tab disabled="{{yinbi_active_4}}" title="瓦工施工" custom-class="deg_cont">
+        <van-row>
+          <block wx:for-items="{{ yinbi_fileList_4 }}" wx:key="{{ index }}">
+            <van-col custom-class="imgOut" span="6" bindtap="yinbi_previewImage4" data-current="{{ item }}">
+              <image class='itemImg' src="{{ item }}"></image>
+            </van-col>
+          </block>
+        </van-row>
+      </van-tab>
+      <van-tab disabled="{{yinbi_active_5}}" title="预验收" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ yinbi_fileList_5 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="yinbi_onChange_5" bind:success="yinbi_onSuccess_5" bind:fail="yinbi_onFail_5" bind:complete="yinbi_onComplete_5" bind:preview="yinbi_onPreview_5" bind:remove="yinbi_onRemove_5">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+      <van-tab disabled="{{yinbi_active_6}}" title="三方验收" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ yinbi_fileList_6 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="yinbi_onChange_6" bind:success="yinbi_onSuccess_6" bind:fail="yinbi_onFail_6" bind:complete="yinbi_onComplete_6" bind:preview="yinbi_onPreview_6" bind:remove="yinbi_onRemove_6">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+    </van-tabs>
+  </van-col>
+</van-row>
+
+<van-row custom-class="deg_title">
+  <van-col span="24">木工施工</van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-tabs active="{{ mugong_active_index }}" bind:change="changeClick">
+      <van-tab disabled="{{mugong_active_0}}" title="材料进场" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ mugong_fileList_0 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="mugong_onChange_0" bind:success="mugong_onSuccess_0" bind:fail="mugong_onFail_0" bind:complete="mugong_onComplete_0" bind:preview="mugong_onPreview_0" bind:remove="mugong_onRemove_0">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+      <van-tab disabled="{{mugong_active_1}}" title="木工施工现场" custom-class="deg_cont">
+        <van-row>
+          <block wx:for-items="{{ mugong_fileList_1 }}" wx:key="{{ index }}">
+            <van-col custom-class="imgOut" span="6" bindtap="mugong_previewImage1" data-current="{{ item }}">
+              <image class='itemImg' src="{{ item }}"></image>
+            </van-col>
+          </block>
+        </van-row>
+      </van-tab>
+      <van-tab disabled="{{mugong_active_2}}" title="三方验收" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ mugong_fileList_2 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="mugong_onChange_2" bind:success="mugong_onSuccess_2" bind:fail="mugong_onFail_2" bind:complete="mugong_onComplete_2" bind:preview="mugong_onPreview_2" bind:remove="mugong_onRemove_2">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+    </van-tabs>
+  </van-col>
+</van-row>
+
+
+<van-row custom-class="deg_title">
+  <van-col span="24">瓦工施工</van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-tabs active="{{ wagong_active_index }}" bind:change="changeClick">
+      <van-tab disabled="{{wagong_active_0}}" title="材料进场" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ wagong_fileList_0 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="wagong_onChange_0" bind:success="wagong_onSuccess_0" bind:fail="wagong_onFail_0" bind:complete="wagong_onComplete_0" bind:preview="wagong_onPreview_0" bind:remove="wagong_onRemove_0">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+      <van-tab disabled="{{wagong_active_1}}" title="瓦工施工现场" custom-class="deg_cont">
+        <van-row>
+          <block wx:for-items="{{ wagong_fileList_1 }}" wx:key="{{ index }}">
+            <van-col custom-class="imgOut" span="6" bindtap="wagong_previewImage1" data-current="{{ item }}">
+              <image class='itemImg' src="{{ item }}"></image>
+            </van-col>
+          </block>
+        </van-row>
+      </van-tab>
+      <van-tab disabled="{{wagong_active_2}}" title="三方验收" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ wagong_fileList_2 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="wagong_onChange_2" bind:success="wagong_onSuccess_2" bind:fail="wagong_onFail_2" bind:complete="wagong_onComplete_2" bind:preview="wagong_onPreview_2" bind:remove="wagong_onRemove_2">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+    </van-tabs>
+  </van-col>
+</van-row>
+
+
+<van-row custom-class="deg_title">
+  <van-col span="24">油漆施工</van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-tabs active="{{ yougong_active_index }}" bind:change="changeClick">
+      <van-tab disabled="{{yougong_active_0}}" title="材料进场" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ yougong_fileList_0 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="yougong_onChange_0" bind:success="yougong_onSuccess_0" bind:fail="yougong_onFail_0" bind:complete="yougong_onComplete_0" bind:preview="yougong_onPreview_0" bind:remove="yougong_onRemove_0">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+      <van-tab disabled="{{yougong_active_1}}" title="油工施工现场" custom-class="deg_cont">
+        <van-row>
+          <block wx:for-items="{{ yougong_fileList_1 }}" wx:key="{{ index }}">
+            <van-col custom-class="imgOut" span="6" bindtap="yougong_previewImage1" data-current="{{ item }}">
+              <image class='itemImg' src="{{ item }}"></image>
+            </van-col>
+          </block>
+        </van-row>
+      </van-tab>
+      <van-tab disabled="{{yougong_active_2}}" title="三方验收" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ yougong_fileList_2 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="yougong_onChange_2" bind:success="yougong_onSuccess_2" bind:fail="yougong_onFail_2" bind:complete="yougong_onComplete_2" bind:preview="yougong_onPreview_2" bind:remove="yougong_onRemove_2">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+    </van-tabs>
+  </van-col>
+</van-row>
+
+<van-row custom-class="deg_title">
+  <van-col span="24">竣工验收</van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-tabs active="{{ jungong_active_index }}" bind:change="changeClick">
+      <van-tab disabled="{{jungong_active_0}}" title="竣工仪式" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ jungong_fileList_0 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="jungong_onChange_0" bind:success="jungong_onSuccess_0" bind:fail="jungong_onFail_0" bind:complete="jungong_onComplete_0" bind:preview="jungong_onPreview_0" bind:remove="jungong_onRemove_0">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+      <van-tab disabled="{{jungong_active_1}}" title="竣工验收单" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ jungong_fileList_1 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="jungong_onChange_1" bind:success="jungong_onSuccess_1" bind:fail="jungong_onFail_1" bind:complete="jungong_onComplete_1" bind:preview="jungong_onPreview_1" bind:remove="jungong_onRemove_1">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+      <van-tab disabled="{{jungong_active_2}}" title="质保单" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ jungong_fileList_2 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="jungong_onChange_2" bind:success="jungong_onSuccess_2" bind:fail="jungong_onFail_2" bind:complete="jungong_onComplete_2" bind:preview="jungong_onPreview_2" bind:remove="jungong_onRemove_2">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+      <van-tab disabled="{{jungong_active_3}}" title="实景图" custom-class="deg_cont">
+        <wux-upload list-type="picture-card" file-list="{{ jungong_fileList_3 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg" bind:change="jungong_onChange_3" bind:success="jungong_onSuccess_3" bind:fail="jungong_onFail_3" bind:complete="jungong_onComplete_3" bind:preview="jungong_onPreview_3" bind:remove="jungong_onRemove_3">
+            <wux-icon type='ios-add' size="50"/>
+        </wux-upload>
+      </van-tab>
+    </van-tabs>
+  </van-col>
+</van-row>

@@ -291,7 +291,7 @@ Component({
     created() {
         this.index = 0
         this.createdAt = Date.now()
-        this.getUid = () => `wux-upload--${this.createdAt}-${++this.index}`
+      this.getUid = () => `wux-upload--${this.createdAt}-${++this.index}-${Math.random().toString(36).substr(2)}`
         this.uploadTask = {}
         this.tempFilePaths = []
     },
