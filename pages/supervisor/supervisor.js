@@ -47,37 +47,35 @@ Page({
     // 隐蔽工程
     yinbi_fileList_0: [],
     yinbi_fileList_1: [
-      '/img/no.jpg',
-      '/img/no.jpg',
-      'http://e.hiphotos.baidu.com/image/pic/item/4b90f603738da9773ded4541bd51f8198718e39e.jpg'
+      "https://request.hejianzhiyang.com/Uploads/no.png"
     ],
     yinbi_fileList_2: [
-      '/img/no.jpg'
+      "https://request.hejianzhiyang.com/Uploads/no.png"
     ],
     yinbi_fileList_3: [
-      '/img/no.jpg'
+      "https://request.hejianzhiyang.com/Uploads/no.png"
     ],
     yinbi_fileList_4: [
-      '/img/no.jpg'
+      "https://request.hejianzhiyang.com/Uploads/no.png"
     ],
     yinbi_fileList_5: [],
     yinbi_fileList_6: [],
     // 木工施工
     mugong_fileList_0: [],
     mugong_fileList_1: [
-      '/img/no.jpg'
+      "https://request.hejianzhiyang.com/Uploads/no.png"
     ],
     mugong_fileList_2: [],
     // 瓦工施工
     wagong_fileList_0: [],
     wagong_fileList_1: [
-      '/img/no.jpg'
+      "https://request.hejianzhiyang.com/Uploads/no.png"
     ],
     wagong_fileList_2: [],
     // 油工施工
     yougong_fileList_0: [],
     yougong_fileList_1: [
-      '/img/no.jpg'
+      "https://request.hejianzhiyang.com/Uploads/no.png"
     ],
     yougong_fileList_2: [],
     // 竣工验收
