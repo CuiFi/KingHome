@@ -5,20 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    cont: {
-      txth1: "兰特花园",
-      txth2: "张三",
-      txth3: "2018.1.1",
-      txtp: "此处是我们家项目的介绍",
-      oneImg: [
-        {
-          url: '/img/pic_article.png'
-        },
-        {
-          url: '/img/pic_article.png'
-        }
-      ]
-    },
+    urls: [
+      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1541843916047&di=7f304778575c0fd6f6e18801f04554aa&imgtype=0&src=http%3A%2F%2Fimg.315che.com%2Fs%2FA201%2F101S%2F6eze%2Ftooc%2FaLU0%2FU0.gif',
+      'http://h.hiphotos.baidu.com/image/pic/item/63d0f703918fa0ec37b6b2622b9759ee3d6ddb68.jpg',
+      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1541843916047&di=7f304778575c0fd6f6e18801f04554aa&imgtype=0&src=http%3A%2F%2Fimg.315che.com%2Fs%2FA201%2F101S%2F6eze%2Ftooc%2FaLU0%2FU0.gif',
+      'http://h.hiphotos.baidu.com/image/pic/item/63d0f703918fa0ec37b6b2622b9759ee3d6ddb68.jpg',
+    ],
+    cont:'',
+    fwteam:'',
+    imgArray:'',
+    nameText:''
+  },
+
+
+  previewImage(e) {
+    const { current } = e.currentTarget.dataset
+    const { imgArray } = this.data
+    console.log(current);
+
+    wx.previewImage({
+      current,
+      urls: imgArray.url,
+    })
   },
 
   /**
@@ -26,21 +34,74 @@ Page({
    */
   onLoad: function (options) {
     var _this = this;
-    console.log("展示页面所用id:"+options.id);
+    console.log(options.id);
+    // console.log("展示页面所用id:"+options.id);
     // var id = wx.getStorageSync('id') || []
     // console.log(typeof ("hello:" + id));
     // 根据id获取当前身份具体人的案例列表信息
+    // wx.request({
+    //   url: 'https://request.hejianzhiyang.com/Shouji/cc?id=' + options.id,
+    //   method: "GET",
+    //   data: {},//openid 用于获取对应信息
+    //   success: function (res) {
+    //     console.log(res);
+    //     _this.setData({
+    //       // cont: res.data
+    //     });
+    //   }
+    // });
     wx.request({
-      url: 'https://request.hejianzhiyang.com/Shouji/cc?id=' + options.id,
-      method: "GET",
-      data: {},//openid 用于获取对应信息
+      url: 'https://request.hejianzhiyang.com/Jinguanjia/getcontent',
+      method:"POST",
+      data:{
+        kehuID: options.id,
+      },
+      success:function(res){
+        console.log(res);
+        _this.setData({
+          cont:res.data
+        });
+      }
+    });
+    wx.request({
+      url: 'https://request.hejianzhiyang.com/Jinguanjia/getcontents',
+      method: "POST",
+      data: {
+        kehuID: options.id,
+      },
       success: function (res) {
         console.log(res);
         _this.setData({
-          // cont: res.data
+          fwteam: res.data
         });
       }
-    })
+    });
+    wx.request({
+      url: 'https://request.hejianzhiyang.com/Jinguanjia/getcontent_img',
+      method: "POST",
+      data: {
+        kehuID: options.id,
+      },
+      success: function (res) {
+        console.log(res);
+        _this.setData({
+          imgArray: res.data
+        });
+      }
+    });
+    wx.request({
+      url: 'https://request.hejianzhiyang.com/Jinguanjia/getcontent_header',
+      method: "POST",
+      data: {
+        kehuID: options.id,
+      },
+      success: function (res) {
+        console.log(res);
+        _this.setData({
+          nameText: res.data
+        });
+      }
+    });
   },
 
   /**
