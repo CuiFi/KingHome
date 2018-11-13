@@ -18,20 +18,24 @@ App({
           }
         })
       }
-    })
+    });
+
+    wx.redirectTo({
+      url: '/pages/index/index'
+    });
     // 检查本地是否存储之前授权过的后台传回来的url
-    var firstUrl = wx.getStorageSync('firstUrl') || []
+    // var firstUrl = wx.getStorageSync('firstUrl') || []
     // console.log(firstUrl.toString());
     // console.log(typeof firstUrl.length);
 
-    if(firstUrl.length){
-      wx.switchTab({
-        url: firstUrl.toString()
-      });
-    }else{
-      wx.redirectTo({
-        url: '/pages/index/index'
-      });
+    // if(firstUrl.length){
+    //   wx.switchTab({
+    //     url: firstUrl.toString()
+    //   });
+    // }else{
+    //   wx.redirectTo({
+    //     url: '/pages/index/index'
+    //   });
       // wx.login({
         // success: res => {
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
@@ -43,7 +47,7 @@ App({
           // wx.setStorageSync('firstUrl', a)
         // }
       // })
-    }
+    // }
     
 
     // 获取用户信息

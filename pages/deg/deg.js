@@ -32,35 +32,13 @@ Page({
 
     // 用于显示列表图片
     // 服务团队
-    server_fileList_0: [
-      {
-        status: "done",
-        uid: "wux-upload--1541656788092-1",
-        url: "/img/11.jpg"
-      },
-      {
-        status: "done",
-        uid: "wux-upload--1541656788092-2",
-        url: "/img/12.jpg"
-      },
-    ],
+    server_fileList_0: [],
     server_fileList_1: [],
     server_fileList_2: [],
     server_fileList_3: [],
     server_fileList_4: [],
     // 签约
-    sign_fileList_0: [
-      {
-        status: "done",
-        uid: "wux-upload--1541656788092-3",
-        url: "/img/11.jpg"
-      },
-      {
-        status: "done",
-        uid: "wux-upload--1541656788092-4",
-        url: "/img/12.jpg"
-      },
-    ],
+    sign_fileList_0: [],
     sign_fileList_1: [],
     sign_fileList_2: [],
     sign_fileList_3: [],

@@ -43,16 +43,30 @@ Page({
         success: function (res) {
           console.log(res);
           let url = res.data.url;//从后台得到的手机号匹配权限相关路径 res.url  /pages/editlist/editlist
+          // let url = '';
           let id = res.data.id; //从后台得到的手机号匹配权限相关具体人员标识 res.id 
           // let name = '设计师';  // 用于得知身份,后续进行路径匹配
 
           wx.setStorageSync('id', id);
-          wx.setStorageSync('firstUrl', url);
+          // wx.setStorageSync('firstUrl', url);
           // wx.setStorageSync('name', name);
 
           if(url == '/pages/showpage/showpage'){
             wx.navigateTo({
               url: url,
+            })
+          }else if(url == ''){
+            wx.showModal({
+              title: '警告',
+              content: '抱歉！您不是本公司客户或工作人员，不能登录本系统',
+              showCancel:false,
+              success(res) {
+                if (res.confirm) {
+                  console.log('用户点击确定')
+                } else if (res.cancel) {
+                  console.log('用户点击取消')
+                }
+              }
             })
           }else{
             wx.switchTab({

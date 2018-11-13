@@ -35,6 +35,10 @@ Page({
   onLoad: function (options) {
     var _this = this;
     console.log(options.id);
+    let khid = wx.getStorageSync("id");
+    // options.id = 3;
+    let kehuidid = options.id ? options.id : khid;
+    console.log(kehuidid);
     // console.log("展示页面所用id:"+options.id);
     // var id = wx.getStorageSync('id') || []
     // console.log(typeof ("hello:" + id));
@@ -54,7 +58,7 @@ Page({
       url: 'https://request.hejianzhiyang.com/Jinguanjia/getcontent',
       method:"POST",
       data:{
-        kehuID: options.id,
+        kehuID: kehuidid,
       },
       success:function(res){
         console.log(res);
@@ -67,7 +71,7 @@ Page({
       url: 'https://request.hejianzhiyang.com/Jinguanjia/getcontents',
       method: "POST",
       data: {
-        kehuID: options.id,
+        kehuID: kehuidid,
       },
       success: function (res) {
         console.log(res);
@@ -80,7 +84,7 @@ Page({
       url: 'https://request.hejianzhiyang.com/Jinguanjia/getcontent_img',
       method: "POST",
       data: {
-        kehuID: options.id,
+        kehuID: kehuidid,
       },
       success: function (res) {
         console.log(res);
@@ -93,7 +97,7 @@ Page({
       url: 'https://request.hejianzhiyang.com/Jinguanjia/getcontent_header',
       method: "POST",
       data: {
-        kehuID: options.id,
+        kehuID: kehuidid,
       },
       success: function (res) {
         console.log(res);
