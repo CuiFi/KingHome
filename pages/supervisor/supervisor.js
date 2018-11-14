@@ -47,35 +47,35 @@ Page({
     // 隐蔽工程
     yinbi_fileList_0: [],
     yinbi_fileList_1: [
-      "https://request.hejianzhiyang.com/Uploads/no.png"
+      "https://request.hejianzhiyang.com/Uploads/no.jpg"
     ],
     yinbi_fileList_2: [
-      "https://request.hejianzhiyang.com/Uploads/no.png"
+      "https://request.hejianzhiyang.com/Uploads/no.jpg"
     ],
     yinbi_fileList_3: [
-      "https://request.hejianzhiyang.com/Uploads/no.png"
+      "https://request.hejianzhiyang.com/Uploads/no.jpg"
     ],
     yinbi_fileList_4: [
-      "https://request.hejianzhiyang.com/Uploads/no.png"
+      "https://request.hejianzhiyang.com/Uploads/no.jpg"
     ],
     yinbi_fileList_5: [],
     yinbi_fileList_6: [],
     // 木工施工
     mugong_fileList_0: [],
     mugong_fileList_1: [
-      "https://request.hejianzhiyang.com/Uploads/no.png"
+      "https://request.hejianzhiyang.com/Uploads/no.jpg"
     ],
     mugong_fileList_2: [],
     // 瓦工施工
     wagong_fileList_0: [],
     wagong_fileList_1: [
-      "https://request.hejianzhiyang.com/Uploads/no.png"
+      "https://request.hejianzhiyang.com/Uploads/no.jpg"
     ],
     wagong_fileList_2: [],
     // 油工施工
     yougong_fileList_0: [],
     yougong_fileList_1: [
-      "https://request.hejianzhiyang.com/Uploads/no.png"
+      "https://request.hejianzhiyang.com/Uploads/no.jpg"
     ],
     yougong_fileList_2: [],
     // 竣工验收
@@ -222,6 +222,7 @@ Page({
         kehuID: options.id,
       },
       success(res) {
+        console.log(res);
         _this.setData({
           // 隐蔽工程
           yinbi_fileList_1: res.data.tag29,

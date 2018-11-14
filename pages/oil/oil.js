@@ -119,7 +119,7 @@ Page({
         wd: lat,
         jd: lon,
         // 还要加上具体项目的标签项id
-        cid: "44"
+        cid: "45"
       },
       success(res) {
         // do something

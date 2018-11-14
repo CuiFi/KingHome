@@ -80,7 +80,7 @@ Page({
         console.log(res);
         _this.setData({
           // 服务团队
-          server_fileList_0: res.data.tag2,
+          server_fileList_0: res.data.tag2 || [],
           server_fileList_1: res.data.tag3,
           server_fileList_2: res.data.tag4,
           server_fileList_3: res.data.tag5,

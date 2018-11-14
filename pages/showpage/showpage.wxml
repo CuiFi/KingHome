@@ -23,7 +23,6 @@
         </van-row>
       </view>
     </block>
-
   </view>
 
   <view class='showContent'>
