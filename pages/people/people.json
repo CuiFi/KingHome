@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "个人中心",
+  "usingComponents": {
+    "van-cell": "../../vantdist/cell/index",
+    "van-cell-group": "../../vantdist/cell-group/index"
+  }
+}

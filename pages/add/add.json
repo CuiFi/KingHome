@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "添加共享好友",
+  "usingComponents": {
+    "van-swipe-cell": "../../vantdist/swipe-cell/index",
+    "van-cell": "../../vantdist/cell/index",
+    "van-cell-group": "../../vantdist/cell-group/index",
+    "van-row": "../../vantdist/row/index",
+    "van-col": "../../vantdist/col/index"
+  }
+}

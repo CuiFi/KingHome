@@ -15,8 +15,8 @@ page{
 .showHeader {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-start;
   position: absolute;
   top: 0;
   left: 0;
@@ -25,14 +25,26 @@ page{
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.showHeader .h2 {
+/* .showHeader .h2 {
   color: #fff;
   font-size: 50rpx;
+  margin-right: 10px;
 }
 
 .showHeader .h3 {
   color: #fff;
   font-size: 40rpx;
+  margin-right: 10px;
+} */
+.showHeader .h4 {
+  color: #fff;
+  font-size: 24rpx;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 3px;
+}
+.showHeader .h4 text {
+  margin-right: 10px;
 }
 
 .showContent {

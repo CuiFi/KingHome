@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "意见反馈",
+  "usingComponents": {
+    "wux-upload": "../../wuxdist/upload/index",
+    "wux-icon": "../../wuxdist/icon/index"
+  }
+}

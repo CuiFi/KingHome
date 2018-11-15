@@ -1,0 +1,16 @@
+<!--pages/add/add.wxml-->
+<van-row>
+  <van-col custom-class="add_one" span="24">已添加好友列表</van-col>
+</van-row>
+<van-swipe-cell right-width="{{ 65 }}">
+  <van-cell-group>
+    <van-cell title="张三" value="110" />
+  </van-cell-group>
+  <view slot="right" class="van-swipe-cell__right">删除</view>
+</van-swipe-cell>
+<van-swipe-cell right-width="{{ 65 }}">
+  <van-cell-group>
+    <van-cell title="李四" value="114" />
+  </van-cell-group>
+  <view slot="right" class="van-swipe-cell__right">删除</view>
+</van-swipe-cell>

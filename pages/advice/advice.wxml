@@ -1,0 +1,42 @@
+<!--pages/advice/advice.wxml-->
+<view class="page">
+  <view class="page__bd">
+
+    <form bindsubmit="formSubmit">
+      <view class="weui-cells__title">问题和意见</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <textarea name="advice_content" class="weui-textarea" placeholder="请写下您的建议" style="height: 3.3em" value='{{ text_value }}' />
+            <!-- <view class="weui-textarea-counter">0/200</view> -->
+          </view>
+        </view>
+      </view>
+
+      <view class="weui-cells__title">图片 (选填,提供问题截图)</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input upup">
+          <view class="weui-cell__bd">
+            <wux-upload list-type="picture-card" file-list="{{ adv_fileList_0 }}" url="https://request.hejianzhiyang.com/Jinguanjia/uploadimg_advice" bind:change="adv_onChange_0" bind:success="adv_onSuccess_0" bind:fail="adv_onFail_0" bind:complete="adv_onComplete_0" bind:preview="adv_onPreview_0"
+              bind:remove="adv_onRemove_0">
+              <wux-icon type='ios-add' size="50" />
+            </wux-upload>
+          </view>
+        </view>
+      </view>
+
+      <view class="weui-cells__title">联系电话</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+            <input name="advice_phone" class="weui-input" placeholder="选填,便于我们与您联系" value='{{phone_value}}' />
+          </view>
+        </view>
+      </view>
+
+      <view class="weui-btn-area">
+        <button class="weui-btn people-sub" formType="submit">确定</button>
+      </view>
+    </form>
+  </view>
+</view>

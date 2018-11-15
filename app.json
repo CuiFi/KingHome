@@ -13,6 +13,9 @@
     "pages/oil/oil",
     "pages/pr/pr",
     "pages/supervisor/supervisor",
+    "pages/people/people",
+    "pages/advice/advice",
+    "pages/add/add",
     "pages/upf/upf"
   ],
   "window":{

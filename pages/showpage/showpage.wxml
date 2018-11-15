@@ -1,10 +1,16 @@
 <view class='showTitle'>
   <image mode='scaleToFill' src='/img/bgIcon.jpg'></image>
   <view class='showHeader'>
-    <text class='h2'>{{nameText.data1}}</text>
-    <text class='h3'>{{nameText.data2}}</text>
+    <!-- <text class='h2'>{{nameText.data1}}</text> -->
+    <!-- <text class='h3'>{{nameText.data2}}</text> -->
+    <text class='h4'>
+      <text>{{nameText.data1}}</text>
+      <text>{{nameText.data2}}</text>
+      <text>{{nameText.data3}}</text>
+    </text>
   </view>
 </view>
+<button bindtap='gosecond'>gosecond</button>
 
 <view class='pd'>
   <view class='showContent'>

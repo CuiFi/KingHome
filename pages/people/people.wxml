@@ -1,0 +1,5 @@
+<!--pages/people/people.wxml-->
+<van-cell-group>
+  <van-cell title="添加共享好友" is-link url="/pages/add/add" />
+  <van-cell title="意见反馈" is-link url="/pages/advice/advice" />
+</van-cell-group>
