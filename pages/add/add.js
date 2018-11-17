@@ -1,15 +1,29 @@
 // pages/add/add.js
+import Dialog from '../../vantdist/dialog/dialog';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    active:null,
+    goodf:[
+      {
+        name:"张三",
+        tel:"13800138000"
+      },
+      {
+        name: "李四",
+        tel: "13800138001"
+      }
 
+    ]
   },
 
-
   onClose(event) {
+    console.log(event);
+    var ii = event.currentTarget.dataset.key;
+    console.log(typeof event.currentTarget.dataset.key);
     const { position, instance } = event.detail;
     switch (position) {
       case 'left':
@@ -20,11 +34,35 @@ Page({
         Dialog.confirm({
           message: '确定删除吗？'
         }).then(() => {
+          console.log(instance);
           instance.close();
+          instance.setData({
+            active: ii.toString()
+          });
+        }).catch(() => {
+          console.log("不想删除了");
         });
         break;
     }
   },
+
+
+  // onClose(event) {
+  //   const { position, instance } = event.detail;
+  //   switch (position) {
+  //     case 'left':
+  //     case 'cell':
+  //       instance.close();
+  //       break;
+  //     case 'right':
+  //       Dialog.confirm({
+  //         message: '确定删除吗？'
+  //       }).then(() => {
+  //         instance.close();
+  //       });
+  //       break;
+  //   }
+  // },
 
   /**
    * 生命周期函数--监听页面加载

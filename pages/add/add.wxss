@@ -16,3 +16,6 @@
   color: #aaa;
   padding: 10px;
 }
+.active{
+  display: none;
+}

@@ -5,6 +5,7 @@
     "van-cell": "../../vantdist/cell/index",
     "van-cell-group": "../../vantdist/cell-group/index",
     "van-row": "../../vantdist/row/index",
-    "van-col": "../../vantdist/col/index"
+    "van-col": "../../vantdist/col/index",
+    "van-dialog": "../../vantdist/dialog/index"
   }
 }

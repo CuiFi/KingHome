@@ -2,15 +2,14 @@
 <van-row>
   <van-col custom-class="add_one" span="24">已添加好友列表</van-col>
 </van-row>
-<van-swipe-cell right-width="{{ 65 }}">
-  <van-cell-group>
-    <van-cell title="张三" value="110" />
-  </van-cell-group>
-  <view slot="right" class="van-swipe-cell__right">删除</view>
-</van-swipe-cell>
-<van-swipe-cell right-width="{{ 65 }}">
-  <van-cell-group>
-    <van-cell title="李四" value="114" />
-  </van-cell-group>
-  <view slot="right" class="van-swipe-cell__right">删除</view>
-</van-swipe-cell>
+
+<block wx:for="{{goodf}}" wx:key="{{item.id}}">
+  <van-swipe-cell right-width="{{ 65 }}" class="{{active == index ? 'active' : ''}}" async-close bind:close="onClose" data-key="{{index}}">
+    <van-cell-group>
+      <van-cell title="{{item.name}}" value="{{item.tel}}" />
+    </van-cell-group>
+    <view slot="right" class="van-swipe-cell__right">删除</view>
+  </van-swipe-cell>
+</block>
+
+<van-dialog id="van-dialog" />
