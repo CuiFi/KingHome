@@ -10,10 +10,22 @@ Page({
     goodf:[
       {
         name:"张三",
+        idid:1,
         tel:"13800138000"
       },
       {
         name: "李四",
+        idid:2,
+        tel: "13800138001"
+      },
+      {
+        name: "王五",
+        idid:3,
+        tel: "13800138001"
+      },
+      {
+        name: "赵六",
+        idid:4,
         tel: "13800138001"
       }
 
@@ -21,8 +33,10 @@ Page({
   },
 
   onClose(event) {
+    var _this = this;
     console.log(event);
     var ii = event.currentTarget.dataset.key;
+    console.log(ii);
     console.log(typeof event.currentTarget.dataset.key);
     const { position, instance } = event.detail;
     switch (position) {
@@ -35,34 +49,40 @@ Page({
           message: '确定删除吗？'
         }).then(() => {
           console.log(instance);
-          instance.close();
-          instance.setData({
-            active: ii.toString()
-          });
+          wx.request({
+            url: 'https://request.hejianzhiyang.com/Jinguanjia/getcontent',
+            method:'POST',
+            data:{},
+            success:res => {
+              console.log(res);
+              instance.close();
+              _this.setData({
+                goodf: [
+                  {
+                    name: "张三",
+                    idid: 1,
+                    tel: "13800138000"
+                  },
+                  {
+                    name: "李四",
+                    idid: 2,
+                    tel: "13800138001"
+                  },
+                  {
+                    name: "赵六",
+                    idid: 4,
+                    tel: "13800138001"
+                  }
+                ]
+              });
+            }
+          })
         }).catch(() => {
           console.log("不想删除了");
         });
         break;
     }
   },
-
-
-  // onClose(event) {
-  //   const { position, instance } = event.detail;
-  //   switch (position) {
-  //     case 'left':
-  //     case 'cell':
-  //       instance.close();
-  //       break;
-  //     case 'right':
-  //       Dialog.confirm({
-  //         message: '确定删除吗？'
-  //       }).then(() => {
-  //         instance.close();
-  //       });
-  //       break;
-  //   }
-  // },
 
   /**
    * 生命周期函数--监听页面加载
