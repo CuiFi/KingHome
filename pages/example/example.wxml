@@ -1,6 +1,8 @@
 <view class='showTitle'>
   <image style="height:{{imgheights}}rpx;width:{{imgwidth}}rpx;" src="{{nameText.img}}" mode="aspectFit" bindload="imageLoad"></image>
   <view class='showHeader'>
+    <!-- <text class='h2'>{{nameText.data1}}</text> -->
+    <!-- <text class='h3'>{{nameText.data2}}</text> -->
     <text class='h4'>
       <text>{{nameText.data1}}</text>
       <text>{{nameText.data2}}</text>

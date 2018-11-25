@@ -55,18 +55,9 @@ Page({
             wx.navigateTo({
               url: url,
             })
-          }else if(url == ''){
-            wx.showModal({
-              title: '警告',
-              content: '抱歉！您不是本公司客户或工作人员，不能登录本系统',
-              showCancel:false,
-              success(res) {
-                if (res.confirm) {
-                  console.log('用户点击确定')
-                } else if (res.cancel) {
-                  console.log('用户点击取消')
-                }
-              }
+          } else if (url == '/pages/example/example'){
+            wx.navigateTo({
+              url: url,
             })
           }else{
             wx.switchTab({
