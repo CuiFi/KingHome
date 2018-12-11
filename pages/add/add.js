@@ -6,7 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    active:null,
     goodf:[
       {
         name:"张三",
@@ -78,6 +77,7 @@ Page({
             }
           })
         }).catch(() => {
+          instance.close();
           console.log("不想删除了");
         });
         break;
@@ -88,7 +88,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // 禁止分享当前页面
+    wx.hideShareMenu();
   },
 
   /**

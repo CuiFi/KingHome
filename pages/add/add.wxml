@@ -4,7 +4,7 @@
 </van-row>
 
 <block wx:for="{{goodf}}" wx:key="{{item.id}}">
-  <van-swipe-cell right-width="{{ 65 }}" class="{{active == index ? 'active' : ''}}" async-close bind:close="onClose" data-key="{{item.idid}}">
+  <van-swipe-cell right-width="{{ 65 }}" async-close bind:close="onClose" data-key="{{item.idid}}">
     <van-cell-group>
       <van-cell title="{{item.name}}" value="{{item.tel}}" />
     </van-cell-group>

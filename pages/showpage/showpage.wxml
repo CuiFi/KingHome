@@ -8,7 +8,7 @@
     </text>
   </view>
 </view>
-<!-- <button bindtap='gosecond'>gosecond</button> -->
+<button bindtap='gosecond'>gosecond</button>
 
 <view class='pd'>
   <view class='showContent'>
