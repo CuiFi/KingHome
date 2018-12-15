@@ -1,4 +1,7 @@
 // pages/showpage/showpage.js
+let FileSystemManager = wx.getFileSystemManager();
+
+
 Page({
 
   /**
@@ -117,6 +120,22 @@ Page({
         kehuID: kehuidid,
       },
       success: function(res) {
+        wx.getImageInfo({
+          src: 'https://request.hejianzhiyang.com/Uploads/20181114/5beba5079eb24.jpg',
+          success:function(resin){
+            console.log(resin.path);
+            FileSystemManager.removeSavedFile({
+              filePath: resin.path,
+              success:function(){
+                console.log('成功');
+              },
+              fail:function(re){
+                console.log('失败');
+                console.log(re);
+              }
+            });
+          }
+        });
         console.log(res);
         _this.setData({
           imgArray: res.data
@@ -156,14 +175,12 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
-
   },
 
   /**

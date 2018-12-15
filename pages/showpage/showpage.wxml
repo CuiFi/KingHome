@@ -8,7 +8,7 @@
     </text>
   </view>
 </view>
-<button bindtap='gosecond'>gosecond</button>
+<!-- <button bindtap='gosecond'>gosecond</button> -->
 
 <view class='pd'>
   <view class='showContent'>
@@ -19,9 +19,12 @@
           <van-col custom-class="imgTitle" span="24">
             {{item.tagName}}
           </van-col>
+          <!-- <van-col custom-class="imgOut" span="24" bindtap="previewImage">
+            <image mode='scaleToFill' class='itemImgfw' src="/img/123.jpg"></image>
+          </van-col> -->
           <block wx:for-items="{{ item.urls }}" wx:key="{{ index }}">
-            <van-col custom-class="imgOut" span="6" bindtap="previewImage" data-current="{{ item }}">
-              <image class='itemImg' src="{{ item }}"></image>
+            <van-col custom-class="imgOut" span="24" bindtap="previewImage" data-current="{{ item }}">
+              <image mode='scaleToFill' class='itemImgfw' src="{{ item }}"></image>
             </van-col>
           </block>
         </van-row>
