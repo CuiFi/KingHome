@@ -1,5 +1,5 @@
 <!--pages/deg/deg.wxml-->
-<van-row custom-class="deg_title">
+<!-- <van-row custom-class="deg_title">
   <van-col span="24">服务团队</van-col>
 </van-row>
 <van-row>
@@ -32,7 +32,7 @@
       </van-tab>
     </van-tabs>
   </van-col>
-</van-row>
+</van-row> -->
 
 
 <van-row custom-class="deg_title">

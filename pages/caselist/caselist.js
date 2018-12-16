@@ -26,6 +26,9 @@ Page({
         _this.setData({
           lists: res.data
         });
+      },
+      fail:function(){
+        console.log('请求超时');
       }
     })
   },

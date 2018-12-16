@@ -16,6 +16,9 @@ Page({
     imgArray: '',
     nameText: '',
     imgheights: 0,
+    imgheightsfw: 0,
+    //图片宽度
+    imgwidthfw: 640,
     //图片宽度
     imgwidth: 750,
   },
@@ -52,6 +55,22 @@ Page({
 
     this.setData({
       imgheights: imgheight,
+    });
+  },
+
+  imageLoadfw: function (e) {
+    //获取图片真实宽度
+    var imgwidth = e.detail.width,
+      imgheight = e.detail.height,
+      //宽高比
+      ratio = imgwidth / imgheight;
+
+    //计算的高度值
+    var viewHeight = 640 / ratio;
+    var imgheight = viewHeight;
+
+    this.setData({
+      imgheightsfw: imgheight,
     });
   },
 
@@ -94,7 +113,7 @@ Page({
       }
     });
     wx.request({
-      url: 'https://request.hejianzhiyang.com/Jinguanjia/getcontents',
+      url: 'https://request.hejianzhiyang.com/Jinguanjia/getcontentss',
       method: "POST",
       data: {
         kehuID: kehuidid,

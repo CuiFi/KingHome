@@ -19,7 +19,9 @@ Page({
     imgArray: '',
     nameText: '',
     imgheights: 0,
+    imgheightsfw: 0,
     //图片宽度
+    imgwidthfw: 640,
     imgwidth: 750,
   },
 
@@ -62,6 +64,22 @@ Page({
     });
   },
 
+  imageLoadfw: function (e) {
+    //获取图片真实宽度
+    var imgwidth = e.detail.width,
+      imgheight = e.detail.height,
+      //宽高比
+      ratio = imgwidth / imgheight;
+
+    //计算的高度值
+    var viewHeight = 640 / ratio;
+    var imgheight = viewHeight;
+
+    this.setData({
+      imgheightsfw: imgheight,
+    });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -101,7 +119,7 @@ Page({
       }
     });
     wx.request({
-      url: 'https://request.hejianzhiyang.com/Jinguanjia/getcontents',
+      url: 'https://request.hejianzhiyang.com/Jinguanjia/getcontentss',
       method: "POST",
       data: {
         kehuID: kehuidid,
@@ -120,22 +138,6 @@ Page({
         kehuID: kehuidid,
       },
       success: function(res) {
-        wx.getImageInfo({
-          src: 'https://request.hejianzhiyang.com/Uploads/20181114/5beba5079eb24.jpg',
-          success:function(resin){
-            console.log(resin.path);
-            FileSystemManager.removeSavedFile({
-              filePath: resin.path,
-              success:function(){
-                console.log('成功');
-              },
-              fail:function(re){
-                console.log('失败');
-                console.log(re);
-              }
-            });
-          }
-        });
         console.log(res);
         _this.setData({
           imgArray: res.data

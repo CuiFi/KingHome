@@ -20,11 +20,11 @@
             {{item.tagName}}
           </van-col>
           <!-- <van-col custom-class="imgOut" span="24" bindtap="previewImage">
-            <image mode='scaleToFill' class='itemImgfw' src="/img/123.jpg"></image>
+            <image style="height:{{imgheightsfw}}rpx;width:{{imgwidthfw}}rpx;" mode='aspectFit' class='itemImgfw' src="/img/123.jpg" bindload="imageLoadfw"></image>
           </van-col> -->
           <block wx:for-items="{{ item.urls }}" wx:key="{{ index }}">
             <van-col custom-class="imgOut" span="24" bindtap="previewImage" data-current="{{ item }}">
-              <image mode='scaleToFill' class='itemImgfw' src="{{ item }}"></image>
+              <image style="height:{{imgheightsfw}}rpx;width:{{imgwidthfw}}rpx;" mode='aspectFit' class='itemImgfw' src="{{ item }}" bindload="imageLoadfw"></image>
             </van-col>
           </block>
         </van-row>

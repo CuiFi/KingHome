@@ -23,7 +23,7 @@
           </van-col>
           <block wx:for-items="{{ item.urls }}" wx:key="{{ index }}">
             <van-col custom-class="imgOut" span="6" bindtap="previewImage" data-current="{{ item }}">
-              <image class='itemImg' src="{{ item }}"></image>
+              <image style="height:{{imgheightsfw}}rpx;width:{{imgwidthfw}}rpx;" mode='aspectFit' class='itemImgfw' src="{{ item }}" bindload="imageLoadfw"></image>
             </van-col>
           </block>
         </van-row>
