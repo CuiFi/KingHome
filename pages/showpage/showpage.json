@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "van-row": "/vantdist/row/index",
-    "van-col": "/vantdist/col/index"
+    "van-col": "/vantdist/col/index",
+    "van-tag": "/vantdist/tag/index"
   }
 }

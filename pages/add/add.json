@@ -1,11 +1,14 @@
 {
   "navigationBarTitleText": "添加共享好友",
+  "disableScroll":true,
   "usingComponents": {
     "van-swipe-cell": "../../vantdist/swipe-cell/index",
     "van-cell": "../../vantdist/cell/index",
     "van-cell-group": "../../vantdist/cell-group/index",
     "van-row": "../../vantdist/row/index",
     "van-col": "../../vantdist/col/index",
-    "van-dialog": "../../vantdist/dialog/index"
+    "van-dialog": "../../vantdist/dialog/index",
+    "van-button": "../../vantdist/button/index",
+    "van-field": "../../vantdist/field/index"
   }
 }

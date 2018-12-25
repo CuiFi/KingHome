@@ -1,6 +1,6 @@
 <!--pages/add/add.wxml-->
 <van-row>
-  <van-col custom-class="add_one" span="24">已添加好友列表</van-col>
+  <van-col custom-class="add_one" span="24">好友列表(最多不能超过10个)</van-col>
 </van-row>
 
 <block wx:for="{{goodf}}" wx:key="{{item.id}}">
@@ -12,4 +12,19 @@
   </van-swipe-cell>
 </block>
 
+<van-row>
+  <van-col custom-class="add_bottom_text" span="24">注: 左滑删除</van-col>
+</van-row>
+
+<van-row custom-class="add_btn">
+  <van-col span="20" offset="2">
+    <van-button size="normal" block="true" type="danger" bindtap='onAdd'>添加好友</van-button>
+  </van-col>
+</van-row>
+
 <van-dialog id="van-dialog" />
+
+<van-dialog id="van-dialog-add" use-slot async-close show-cancel-button>
+  <van-field value="{{ username }}" label="好友姓名" placeholder="请输入好友姓名" bind:change="onChangeName"/>
+  <van-field value="{{ usertel }}" label="好友电话" :border="false" placeholder="请输入电话号码" bind:change="onChangeTel"/>
+</van-dialog>

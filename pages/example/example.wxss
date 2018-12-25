@@ -99,3 +99,7 @@ page{
 .imgTitle{
   margin-bottom: 8px;
 }
+.showPDcontent .van-tag{
+  font-size: 11px;
+  margin-left:5px;
+}

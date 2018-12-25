@@ -36,12 +36,6 @@ Page({
   },
 
 
-  gosecond: function () {
-    wx.navigateTo({
-      url: '/pages/people/people',
-    })
-  },
-
   imageLoad: function (e) {
     //获取图片真实宽度
     var imgwidth = e.detail.width,

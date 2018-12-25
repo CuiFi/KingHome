@@ -1,24 +1,24 @@
-// pages/people/people.js
+// pages/base/base.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    content:''
   },
-
-  handleContact(e) {
-    console.log(e.path)
-    console.log(e.query)
-  },
-
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options);
+    this.setData({
+      content: "https://request.hejianzhiyang.com/Jinguanjia/getXieyi?tagID=" + options.tagID
+    });
+    wx.setNavigationBarTitle({
+      title: options.xieyiName
+    });
   },
 
   /**

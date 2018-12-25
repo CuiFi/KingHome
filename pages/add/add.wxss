@@ -16,6 +16,14 @@
   color: #aaa;
   padding: 10px;
 }
+.add_bottom_text{
+  font-size: 14px;
+  color: rgb(255, 133, 133);
+  padding: 10px;
+}
 .active{
   display: none;
+}
+.add_btn{
+  margin-top: 50px;
 }

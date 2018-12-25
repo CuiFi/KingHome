@@ -43,7 +43,11 @@ Page({
         success: function (res) {
           console.log(res);
           let url = res.data.url;//从后台得到的手机号匹配权限相关路径 res.url  /pages/editlist/editlist
-          // let url = '';
+
+          if(url == null){
+            console.log("no thing");
+          }
+
           let id = res.data.id; //从后台得到的手机号匹配权限相关具体人员标识 res.id 
           // let name = '设计师';  // 用于得知身份,后续进行路径匹配
 

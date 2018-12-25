@@ -2,4 +2,11 @@
 <van-cell-group>
   <van-cell title="添加共享好友" is-link url="/pages/add/add" />
   <van-cell title="意见反馈" is-link url="/pages/advice/advice" />
+  <!-- <van-cell title="联系客服" is-link open-type="contact" bindcontact="handleContact" /> -->
+  <van-button custom-class="contact_people" square open-type="contact" bindcontact="handleContact" block='true'>
+    <view class='title'>联系客服</view>
+    <view class='btn_cont'>
+      <van-icon name="arrow" />
+    </view>
+  </van-button>
 </van-cell-group>

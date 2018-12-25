@@ -17,6 +17,7 @@
     "pages/advice/advice",
     "pages/add/add",
     "pages/example/example",
+    "pages/base/base",
     "pages/upf/upf"
   ],
   "window":{

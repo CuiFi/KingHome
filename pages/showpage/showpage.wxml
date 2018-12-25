@@ -8,7 +8,7 @@
     </text>
   </view>
 </view>
-<!-- <button bindtap='gosecond'>gosecond</button> -->
+<button bindtap='gosecond'>gosecond</button>
 
 <view class='pd'>
   <view class='showContent'>
@@ -23,7 +23,8 @@
             <image style="height:{{imgheightsfw}}rpx;width:{{imgwidthfw}}rpx;" mode='aspectFit' class='itemImgfw' src="/img/123.jpg" bindload="imageLoadfw"></image>
           </van-col> -->
           <block wx:for-items="{{ item.urls }}" wx:key="{{ index }}">
-            <van-col custom-class="imgOut" span="24" bindtap="previewImage" data-current="{{ item }}">
+            <!-- bindtap="previewImage" -->
+            <van-col custom-class="imgOut" span="24" data-current="{{ item }}">
               <image style="height:{{imgheightsfw}}rpx;width:{{imgwidthfw}}rpx;" mode='aspectFit' class='itemImgfw' src="{{ item }}" bindload="imageLoadfw"></image>
             </van-col>
           </block>
@@ -49,7 +50,12 @@
         <view class='showPDcontent'>
           <van-row gutter="5">
             <van-col custom-class="imgTitle" span="24">
-              {{item.tagName}}
+              <text>{{item.tagName}}</text>
+              <block wx:if="{{item.xieyiName != null}}">
+                <van-tag color="#f2826a" plain>
+                  <navigator url="{{item.link}}" hover-class="navigator-hover">{{item.xieyiName}}</navigator>
+                </van-tag>
+              </block>
             </van-col>
             <block wx:for-items="{{ item.urls }}" wx:key="{{ index }}">
               <van-col custom-class="imgOut" span="6" bindtap="previewImage" data-current="{{ item }}">
